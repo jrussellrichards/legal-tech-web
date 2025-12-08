@@ -1,0 +1,4 @@
+/* Resets handled by Chakra UI */
+html {
+  scroll-behavior: smooth;
+}
