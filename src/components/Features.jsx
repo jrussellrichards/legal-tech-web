@@ -1,75 +1,105 @@
 import React from 'react';
-import { Box, Container, Heading, Text, SimpleGrid, Icon, VStack } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Grid, GridItem, Icon, VStack } from '@chakra-ui/react';
+import { FaBoltLightning, FaCoins, FaUserTie, FaChartLine } from 'react-icons/fa6';
 
-const FeatureCard = ({ icon, title, text }) => (
-    <Box
-        bg="white"
-        p={8}
-        borderRadius="2xl"
-        border="1px solid"
-        borderColor="gray.100"
-        boxShadow="sm"
-        transition="all 0.3s"
-        _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl', borderColor: 'brand.500' }}
-    >
-        <Flex
-            w="14"
-            h="14"
-            align="center"
-            justify="center"
-            bg="blue.50"
-            color="brand.500"
-            borderRadius="xl"
-            fontSize="2xl"
-            mb={6}
+const BentoCard = ({ icon, title, text, bg = "white", colSpan = 1, textColor = "brand.950" }) => (
+    <GridItem colSpan={{ base: 1, md: colSpan }}>
+        <Box
+            h="full"
+            bg={bg}
+            p={10}
+            borderRadius="3xl"
+            border="1px solid"
+            borderColor={bg === "brand.950" ? "brand.800" : "gray.100"}
+            boxShadow={bg === "white" ? "lg" : "dark-lg"}
+            position="relative"
+            overflow="hidden"
+            transition="all 0.4s ease"
+            _hover={{ transform: 'translateY(-5px)', shadow: '2xl' }}
+            color={textColor}
         >
-            {icon}
-        </Flex>
-        <Heading as="h3" size="md" mb={3} color="brand.900">
-            {title}
-        </Heading>
-        <Text color="gray.500" lineHeight="relaxed">
-            {text}
-        </Text>
-    </Box>
+            <Box
+                position="absolute"
+                top={0}
+                right={0}
+                w="32"
+                h="32"
+                bg="brand.500"
+                opacity={0.05}
+                borderBottomLeftRadius="full"
+            />
+
+            <VStack align="start" spacing={6} h="full">
+                <Box
+                    p={4}
+                    bg={bg === "brand.950" ? "whiteAlpha.200" : "brand.50"}
+                    color={bg === "brand.950" ? "brand.200" : "brand.600"}
+                    borderRadius="2xl"
+                >
+                    <Icon as={icon} w={6} h={6} />
+                </Box>
+                <Box>
+                    <Heading as="h3" size="lg" mb={3} letterSpacing="tight">
+                        {title}
+                    </Heading>
+                    <Text color={bg === "brand.950" ? "whiteAlpha.700" : "gray.500"} fontSize="lg" lineHeight="relaxed">
+                        {text}
+                    </Text>
+                </Box>
+            </VStack>
+        </Box>
+    </GridItem>
 );
 
 const Features = () => {
     return (
-        <Box py={24} bg="white" id="benefits">
+        <Box py={24} bg="white" position="relative">
             <Container maxW="container.xl">
-                <Box textAlign="center" mb={16} maxW="2xl" mx="auto">
-                    <Heading as="h2" size="2xl" mb={4} color="brand.950">
-                        Por qué elegirnos
+                <Box mb={20} textAlign={{ base: "left", md: "center" }}>
+                    <Text color="brand.600" fontWeight="bold" mb={2} letterSpacing="wide" textTransform="uppercase" fontSize="sm">
+                        Nuestra Ventaja
+                    </Text>
+                    <Heading as="h2" size="2xl" color="brand.950" mb={4} letterSpacing="tight">
+                        Tecnología que te da superpoderes
                     </Heading>
-                    <Text fontSize="lg" color="gray.500">
-                        Redefinimos el estándar legal combinando la experiencia humana con motores de IA.
+                    <Text fontSize="xl" color="gray.500" maxW="2xl" mx="auto">
+                        La combinación perfecta entre la velocidad de la IA y el criterio experto de nuestros abogados.
                     </Text>
                 </Box>
 
-                <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
-                    <FeatureCard
-                        icon="⚡"
+                <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
+                    {/* Main Hero Card */}
+                    <BentoCard
+                        colSpan={2}
+                        icon={FaBoltLightning}
                         title="Velocidad Inigualable"
-                        text="Tiempos de entrega récord gracias a nuestro procesamiento asistido por IA."
+                        text="Procesamos y analizamos documentos 10 veces más rápido que un estudio tradicional, permitiéndote cerrar negocios en tiempo récord."
                     />
-                    <FeatureCard
-                        icon="💰"
-                        title="Precio Competitivo"
-                        text="El mejor precio del mercado: $500.000 todo incluido. Sin costos ocultos."
+
+                    <BentoCard
+                        icon={FaCoins}
+                        title="Mejor Precio"
+                        text="Automatización significa menos horas facturables y un costo fijo transparente de $500.000."
                     />
-                    <FeatureCard
-                        icon="⚖️"
-                        title="Abogados de Primer Nivel"
-                        text="Supervisión experta humana garantizada para una precisión del 100%."
+
+                    <BentoCard
+                        icon={FaUserTie}
+                        title="Abogados Expertos"
+                        text="La IA detecta, el humano revisa. Garantizamos 100% de precisión jurídica."
                     />
-                </SimpleGrid>
+
+                    <BentoCard
+                        colSpan={2}
+                        bg="brand.950"
+                        textColor="white"
+                        icon={FaChartLine}
+                        title="Reportes Inteligentes"
+                        text="Recibe informes ejecutivos claros, con semáforos de riesgo y recomendaciones accionables. Adiós a la jerga legal incomprensible."
+                    />
+                </Grid>
             </Container>
         </Box>
     );
 };
 
 export default Features;
-
-// Helper imports that were missing in code block but generally exist in scope
-import { Flex } from '@chakra-ui/react';
