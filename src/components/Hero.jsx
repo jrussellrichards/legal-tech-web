@@ -99,7 +99,7 @@ const Hero = () => {
                         </MotionText>
 
                         <Text fontSize="md" color="gold.400" fontWeight="bold" mb={12}>
-                            Cero riesgos ocultos. Tarifa plana de $500.000.
+                            Cero riesgos ocultos. Precio Fijo $500.000.
                         </Text>
 
                         <Flex
@@ -128,7 +128,7 @@ const Hero = () => {
                             </Button>
                         </Flex>
 
-                        {/* Stats Section with Consistent Data */}
+                        {/* Stats Section with Clarified Time */}
                         <SimpleGrid
                             columns={{ base: 1, md: 3 }}
                             spacing={8}
@@ -136,9 +136,9 @@ const Hero = () => {
                             mx="auto"
                         >
                             {[
-                                { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Tecnología IA + Revisión" },
-                                { icon: FaFileContract, stat: "72h", label: "Tiempo Entrega", sub: "vs 3+ semanas tradicional" },
-                                { icon: FaShieldHalved, stat: "$500k", label: "Precio Fijo", sub: "vs $800k+ promedio mercado" }
+                                { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Doble filtro: IA + Senior" },
+                                { icon: FaFileContract, stat: "72h", label: "Estudio Títulos", sub: "Entrega informes garantizada" },
+                                { icon: FaShieldHalved, stat: "$500k", label: "Precio Fijo", sub: "Sin % del valor propiedad" }
                             ].map((item, i) => (
                                 <Flex
                                     key={i}

@@ -1,87 +1,76 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Grid, GridItem, Icon, VStack } from '@chakra-ui/react';
-import { FaBoltLightning, FaCoins, FaUserTie, FaChartLine } from 'react-icons/fa6';
+import { Box, Container, Heading, Text, SimpleGrid, VStack, Icon } from '@chakra-ui/react';
+import { FaBolt, FaWallet, FaUserCheck, FaSearch } from 'react-icons/fa';
 
-const BentoCard = ({ icon, title, text, colSpan = 1 }) => (
-    <GridItem colSpan={{ base: 1, md: colSpan }}>
+const FeatureItem = ({ icon, title, text }) => (
+    <VStack
+        align="start"
+        spacing={4}
+        p={6}
+        transition="all 0.3s"
+        _hover={{ transform: 'translateY(-5px)' }}
+    >
         <Box
-            h="full"
-            bg="white"
-            p={10}
-            borderRadius="3xl"
-            border="1px solid"
-            borderColor="gray.100"
-            boxShadow="xl" // Elevated shadow
-            position="relative"
-            overflow="hidden"
-            transition="all 0.4s ease"
-            _hover={{ transform: 'translateY(-5px)', shadow: '2xl', borderColor: 'yellow.400' }}
+            p={3}
+            bg="brand.50"
+            color="brand.900"
+            borderRadius="xl"
+            mb={2}
         >
-            <VStack align="start" spacing={6} h="full">
-                <Box
-                    p={4}
-                    bg="brand.50"
-                    color="brand.600"
-                    borderRadius="2xl"
-                >
-                    <Icon as={icon} w={6} h={6} />
-                </Box>
-                <Box>
-                    <Heading as="h3" size="lg" mb={3} letterSpacing="tight" color="brand.950">
-                        {title}
-                    </Heading>
-                    <Text color="gray.500" fontSize="lg" lineHeight="relaxed">
-                        {text}
-                    </Text>
-                </Box>
-            </VStack>
+            <Icon as={icon} w={6} h={6} />
         </Box>
-    </GridItem>
+        <Heading size="md" color="brand.950" fontWeight="700" letterSpacing="-0.01em">
+            {title}
+        </Heading>
+        <Text color="gray.500" fontSize="md" lineHeight="1.8">
+            {text}
+        </Text>
+    </VStack>
 );
 
 const Features = () => {
     return (
-        <Box py={24} bg="#F8FAFC"> {/* Unified light background */}
+        <Box py={32} bg="white">
             <Container maxW="container.xl">
-                <Box mb={16} textAlign="center" maxW="3xl" mx="auto">
-                    <Text color="brand.600" fontWeight="bold" mb={2} letterSpacing="wide" textTransform="uppercase" fontSize="sm">
-                        Nuestra Diferencia
+                {/* Minimalist Header */}
+                <Box mb={24} textAlign="center" maxW="2xl" mx="auto">
+                    <Text color="gold.500" fontWeight="bold" mb={4} fontSize="xs" letterSpacing="widest" textTransform="uppercase">
+                        Nuestra Esencia
                     </Text>
-                    <Heading as="h2" size="2xl" color="brand.950" mb={6} letterSpacing="tight">
-                        Tecnología al servicio de su tranquilidad
+                    <Heading as="h2" size="2xl" color="brand.950" mb={6} letterSpacing="-0.03em" fontWeight="900" lineHeight="1.1">
+                        Precisión que da paz mental.
                     </Heading>
-                    <Text fontSize="xl" color="gray.500">
-                        No solo somos rápidos. Somos exhaustivos. Nuestra metodología detecta riesgos que el ojo humano podría pasar por alto.
+                    <Text fontSize="lg" color="gray.500">
+                        Combinamos tecnología con experiencia legal para eliminar la incertidumbre.
                     </Text>
                 </Box>
 
-                <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
-                    <BentoCard
-                        colSpan={2}
-                        icon={FaBoltLightning}
-                        title="Velocidad sin Precedentes"
-                        text="Gracias a nuestros algoritmos de procesamiento documental, entregamos informes de títulos en una fracción del tiempo habitual."
+                {/* Airy Grid */}
+                <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={8} px={{ base: 4, md: 0 }}>
+                    <FeatureItem
+                        icon={FaBolt}
+                        title="Velocidad Real"
+                        text="Informes listos en 72 horas. Sin las semanas de espera tradicionales."
                     />
 
-                    <BentoCard
-                        icon={FaCoins}
-                        title="Ahorro Inteligente"
-                        text="Estudios tradicionales cobran sobre $800.000 (o el 1% de la propiedad). Nosotros cobramos una tarifa plana de $500.000."
+                    <FeatureItem
+                        icon={FaWallet}
+                        title="Ahorro Directo"
+                        text="Tarifa fija de $500.000. Tu inversión va a la propiedad, no a comisiones."
                     />
 
-                    <BentoCard
-                        icon={FaUserTie}
-                        title="Expertos Legales"
-                        text="Cada documento es validado y firmado por un abogado senior especialista en derecho inmobiliario."
+                    <FeatureItem
+                        icon={FaUserCheck}
+                        title="Firma Experta"
+                        text="Abogados senior validan lo que la IA procesa. Lo mejor de dos mundos."
                     />
 
-                    <BentoCard
-                        colSpan={2}
-                        icon={FaChartLine}
-                        title="Transparencia Total"
-                        text="Informe de estado en tiempo real. Sabrás exactamente en qué etapa está tu compraventa, sin tener que llamar para preguntar."
+                    <FeatureItem
+                        icon={FaSearch}
+                        title="Lupa Legal"
+                        text="Detectamos riesgos invisibles en títulos de 10 años de antigüedad."
                     />
-                </Grid>
+                </SimpleGrid>
             </Container>
         </Box>
     );

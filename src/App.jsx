@@ -3,6 +3,7 @@ import { Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import WhyNow from './components/WhyNow';
+import AboutUs from './components/AboutUs';
 import Features from './components/Features';
 import Services from './components/Services';
 import Pricing from './components/Pricing';
@@ -17,6 +18,7 @@ function App() {
       <Box as="main">
         <Hero />
         <WhyNow />
+        <AboutUs />
         <Features />
         <Services />
         <Team />

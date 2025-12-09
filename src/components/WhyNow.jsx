@@ -1,115 +1,121 @@
 import React from 'react';
-import { Box, Container, Heading, Text, SimpleGrid, VStack, Icon, Stat, StatLabel, StatNumber, StatHelpText } from '@chakra-ui/react';
-import { FaExclamationTriangle, FaRobot, FaClock } from 'react-icons/fa';
-import { HiCheckBadge } from 'react-icons/hi2';
+import { Box, Container, Heading, Text, VStack, SimpleGrid, Icon, Badge, Flex, StackDivider } from '@chakra-ui/react';
+import { FaExclamationTriangle, FaShieldAlt, FaClock, FaCheckCircle, FaRobot, FaBalanceScale } from 'react-icons/fa';
 
 const WhyNow = () => {
     return (
-        <Box py={24} bg="white" position="relative">
-            {/* Subtle gradient accent */}
-            <Box position="absolute" top="0" left="0" w="full" h="2px" bgGradient="linear(to-r, transparent, gold.400, transparent)" />
+        <Box py={28} bg="white" position="relative" overflow="hidden">
+            {/* Narrative Connector Line */}
+            <Box
+                position="absolute"
+                top="0"
+                left="50%"
+                transform="translateX(-50%)"
+                w="1px"
+                h="100px"
+                bgGradient="linear(to-b, transparent, brand.200)"
+            />
 
-            <Container maxW="container.xl">
+            <Container maxW="container.lg">
                 <VStack spacing={20}>
-                    {/* Header */}
-                    <Box textAlign="center" maxW="3xl" mx="auto">
-                        <Text color="brand.600" fontWeight="900" mb={3} letterSpacing="wider" textTransform="uppercase" fontSize="xs">
-                            La Realidad del Mercado
-                        </Text>
-                        <Heading as="h2" size="2xl" color="brand.950" mb={6} letterSpacing="-0.02em" fontWeight="900">
-                            El Error Humano Cuesta Millones
+
+                    {/* ACT 1: THE INVISIBLE ENEMY */}
+                    <Box textAlign="center" maxW="3xl" mx="auto" position="relative">
+                        <Badge colorScheme="red" variant="subtle" mb={4} px={3} py={1} borderRadius="full">El Problema Oculto</Badge>
+                        <Heading as="h2" size="2xl" color="brand.950" mb={6} lineHeight="tight" fontWeight="900">
+                            Un pequeño error manual <br />
+                            <Text as="span" color="red.500">puede costar tu propiedad.</Text>
                         </Heading>
-                        <Text fontSize="lg" color="gray.600" lineHeight="tall">
-                            Estamos en 2025. La tecnología existe para eliminar riesgos evitables. <br />
-                            <Text as="span" fontWeight="bold" color="brand.900">No dejes que una letra chica arruine tu inversión.</Text>
+                        <Text fontSize="xl" color="gray.600" lineHeight="tall">
+                            En Chile, el <strong>22% de las inscripciones</strong> se rechazan por errores evitables.
+                            Los estudios tradicionales dependen de la vista cansada de un abogado revisando miles de fojas.
+                            <Text as="span" fontWeight="bold" color="brand.800"> Nosotros eliminamos ese riesgo.</Text>
                         </Text>
                     </Box>
 
-                    {/* Stats Grid - UNIFIED DATA */}
-                    <SimpleGrid columns={{ base: 1, md: 4 }} spacing={8} w="full">
-                        <VStack
-                            bg="red.50"
+                    {/* ACT 2: THE EVIDENCE (Data Cards) */}
+                    <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} w="full">
+                        <Box
                             p={8}
-                            borderRadius="2xl"
-                            border="2px solid"
-                            borderColor="red.200"
-                            spacing={4}
+                            borderRadius="3xl"
+                            bg="gray.50"
+                            border="1px solid"
+                            borderColor="gray.100"
+                            transition="all 0.3s"
+                            _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'red.200' }}
                         >
-                            <Icon as={FaExclamationTriangle} w={10} h={10} color="red.500" />
-                            <Stat textAlign="center">
-                                <StatNumber fontSize="5xl" fontWeight="900" color="red.600">22%</StatNumber>
-                                <StatLabel fontSize="sm" fontWeight="700" color="gray.700">Tasa de Rechazo</StatLabel>
-                                <StatHelpText fontSize="xs" color="gray.500">En inscripciones CBR manuales</StatHelpText>
-                            </Stat>
-                        </VStack>
+                            <Icon as={FaExclamationTriangle} w={8} h={8} color="red.400" mb={4} />
+                            <Heading size="lg" mb={2} color="brand.950">Riesgo Real</Heading>
+                            <Text color="gray.600">
+                                Un titulo mal estudiado puede significar perder la propiedad años después. El error humano es la causa #1 de litigios.
+                            </Text>
+                        </Box>
 
-                        <VStack
-                            bg="green.50"
+                        <Box
                             p={8}
-                            borderRadius="2xl"
-                            border="2px solid"
-                            borderColor="green.200"
-                            spacing={4}
+                            borderRadius="3xl"
+                            bg="gray.50"
+                            border="1px solid"
+                            borderColor="gray.100"
+                            transition="all 0.3s"
+                            _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'orange.200' }}
                         >
-                            <Icon as={HiCheckBadge} w={10} h={10} color="green.600" />
-                            <Stat textAlign="center">
-                                <StatNumber fontSize="5xl" fontWeight="900" color="green.600">99.8%</StatNumber>
-                                <StatLabel fontSize="sm" fontWeight="700" color="gray.700">Precisión LegalTech</StatLabel>
-                                <StatHelpText fontSize="xs" color="gray.500">Doble validación IA + Experto</StatHelpText>
-                            </Stat>
-                        </VStack>
+                            <Icon as={FaClock} w={8} h={8} color="orange.400" mb={4} />
+                            <Heading size="lg" mb={2} color="brand.950">Tiempo Perdido</Heading>
+                            <Text color="gray.600">
+                                Semanas esperando una respuesta. Mientras tanto, la oportunidad de compra puede desaparecer o el crédito expirar.
+                            </Text>
+                        </Box>
 
-                        <VStack
-                            bg="orange.50"
+                        <Box
                             p={8}
-                            borderRadius="2xl"
-                            border="2px solid"
-                            borderColor="orange.200"
-                            spacing={4}
+                            borderRadius="3xl"
+                            bg="gray.50"
+                            border="1px solid"
+                            borderColor="gray.100"
+                            transition="all 0.3s"
+                            _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'gold.400' }}
                         >
-                            <Icon as={FaClock} w={10} h={10} color="orange.500" />
-                            <Stat textAlign="center">
-                                <StatNumber fontSize="5xl" fontWeight="900" color="orange.600">3-5</StatNumber>
-                                <StatLabel fontSize="sm" fontWeight="700" color="gray.700">Semanas</StatLabel>
-                                <StatHelpText fontSize="xs" color="gray.500">Tiempo promedio mercado</StatHelpText>
-                            </Stat>
-                        </VStack>
-
-                        <VStack
-                            bg="blue.50"
-                            p={8}
-                            borderRadius="2xl"
-                            border="2px solid"
-                            borderColor="blue.200"
-                            spacing={4}
-                        >
-                            <Icon as={FaRobot} w={10} h={10} color="blue.600" />
-                            <Stat textAlign="center">
-                                <StatNumber fontSize="5xl" fontWeight="900" color="blue.600">-70%</StatNumber>
-                                <StatLabel fontSize="sm" fontWeight="700" color="gray.700">Tiempo de Espera</StatLabel>
-                                <StatHelpText fontSize="xs" color="gray.500">Optimización de procesos</StatHelpText>
-                            </Stat>
-                        </VStack>
+                            <Icon as={FaBalanceScale} w={8} h={8} color="gold.500" mb={4} />
+                            <Heading size="lg" mb={2} color="brand.950">Sobreprecio</Heading>
+                            <Text color="gray.600">
+                                Pagar el 1% del valor de la propiedad es un modelo obsoleto. El trabajo legal es el mismo, valga lo que valga la casa.
+                            </Text>
+                        </Box>
                     </SimpleGrid>
 
-                    {/* Quote Box */}
-                    <Box
-                        bg="brand.950"
-                        color="white"
-                        p={12}
-                        borderRadius="3xl"
-                        maxW="4xl"
-                        mx="auto"
-                        borderLeft="4px solid"
-                        borderColor="gold.400"
-                        position="relative"
-                    >
-                        <Text fontSize="2xl" fontWeight="700" lineHeight="tall" mb={4} fontStyle="italic">
-                            "1 de cada 5 compraventas sufre reparos o retrasos por errores de digitación o inconsistencias legales que un algoritmo detecta en segundos."
-                        </Text>
-                        <Text fontSize="sm" color="gray.400" fontWeight="600">
-                            — Reporte de Eficiencia Notarial, 2024
-                        </Text>
+                    {/* ACT 3: THE SOLUTION (Visual Comparison) */}
+                    <Box w="full" bg="brand.950" borderRadius="3xl" overflow="hidden" position="relative" boxShadow="2xl">
+                        <Box p={{ base: 8, md: 16 }} color="white">
+                            <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center" mb={12}>
+                                <Box>
+                                    <Text color="gold.400" fontWeight="bold" letterSpacing="wide" mb={2}>LA NUEVA ERA</Text>
+                                    <Heading size="xl">LegalTech vs Tradicional</Heading>
+                                </Box>
+                                <Icon as={FaRobot} w={12} h={12} color="whiteAlpha.400" display={{ base: 'none', md: 'block' }} />
+                            </Flex>
+
+                            <VStack divider={<StackDivider borderColor="whiteAlpha.200" />} spacing={6} align="stretch">
+                                <Flex justify="space-between" align="center">
+                                    <Text color="gray.400" flex="1">Precisión</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">Humana (Falible)</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">IA + Experto (99.8%)</Text>
+                                </Flex>
+                                <Flex justify="space-between" align="center">
+                                    <Text color="gray.400" flex="1">Velocidad</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">3 Semanas</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">72 Horas</Text>
+                                </Flex>
+                                <Flex justify="space-between" align="center">
+                                    <Text color="gray.400" flex="1">Tecnología</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">Papel y Lápiz</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">Blockchain & NLP</Text>
+                                </Flex>
+                            </VStack>
+                        </Box>
+
+                        {/* Visual Flair */}
+                        <Box position="absolute" top="0" right="0" w="300px" h="300px" bg="gold.500" filter="blur(150px)" opacity="0.1" />
                     </Box>
 
                 </VStack>
