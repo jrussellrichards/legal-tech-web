@@ -2,9 +2,11 @@ import React from 'react';
 import { Box } from '@chakra-ui/react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import WhyNow from './components/WhyNow';
 import Features from './components/Features';
 import Services from './components/Services';
 import Pricing from './components/Pricing';
+import Team from './components/Team';
 import Footer from './components/Footer';
 import WhatsAppButton from './components/WhatsAppButton';
 
@@ -14,8 +16,10 @@ function App() {
       <Header />
       <Box as="main">
         <Hero />
+        <WhyNow />
         <Features />
         <Services />
+        <Team />
         <Pricing />
       </Box>
       <Footer />

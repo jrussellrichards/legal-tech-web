@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Button, Badge, Flex, SimpleGrid, Icon } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Button, Badge, Flex, SimpleGrid, Icon, Stat, StatLabel, StatNumber } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaRocket, FaBolt, FaGlobe, FaCertificate } from 'react-icons/fa6';
-import { HiArrowRight } from 'react-icons/hi2';
+import { FaShieldHalved, FaFileContract, FaRobot } from 'react-icons/fa6';
+import { HiArrowRight, HiSparkles } from 'react-icons/hi2';
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
@@ -10,195 +10,163 @@ const MotionText = motion(Text);
 
 const Hero = () => {
     return (
-        <Box position="relative" pt={{ base: "32", md: "48" }} pb="32" overflow="hidden" bg="gray.50">
-            {/* Dynamic Background Blobs */}
-            <MotionBox
+        <Box position="relative" bg="brand.950" overflow="hidden">
+            {/* Background with Overlay */}
+            <Box
                 position="absolute"
-                top="-20%"
-                right="-10%"
-                w={{ base: "400px", md: "800px" }}
-                h={{ base: "400px", md: "800px" }}
-                bg="brand.500"
-                opacity="0.1"
-                borderRadius="full"
-                filter="blur(120px)"
-                animate={{ scale: [1, 1.2, 1], x: [0, 50, 0] }}
-                transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            />
-            <MotionBox
-                position="absolute"
-                bottom="10%"
-                left="-10%"
-                w={{ base: "300px", md: "600px" }}
-                h={{ base: "300px", md: "600px" }}
-                bg="purple.500"
-                opacity="0.1"
-                borderRadius="full"
-                filter="blur(100px)"
-                animate={{ scale: [1, 1.1, 1], y: [0, -50, 0] }}
-                transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-            />
+                top="0"
+                left="0"
+                right="0"
+                bottom="0"
+                zIndex="0"
+            >
+                <Box
+                    as="img"
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
+                    alt="Office Background"
+                    w="100%"
+                    h="100%"
+                    objectFit="cover"
+                    objectPosition="center"
+                    opacity="0.25"
+                />
+                <Box
+                    position="absolute"
+                    inset="0"
+                    bgGradient="linear(to-b, brand.950, rgba(2, 6, 23, 0.9), brand.950)"
+                    opacity="0.95"
+                />
+            </Box>
 
-            <Container maxW="container.xl" position="relative" zIndex="1" textAlign="center">
-                <MotionBox
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <Flex justify="center" mb={8}>
-                        <Badge
-                            px={4} py={2}
-                            borderRadius="full"
-                            bg="white"
-                            color="brand.600"
-                            border="1px solid"
-                            borderColor="brand.100"
-                            boxShadow="sm"
-                            fontSize="sm"
-                            textTransform="none"
-                            display="flex"
-                            alignItems="center"
-                            gap={2}
-                        >
-                            <Box as="span" color="orange.400"><FaRocket /></Box>
-                            Líderes en tecnología legal inmobiliaria
-                        </Badge>
-                    </Flex>
-
-                    <MotionHeading
-                        as="h1"
-                        fontSize={{ base: "5xl", md: "7xl", lg: "8xl" }}
-                        fontWeight="800"
-                        lineHeight="0.95"
-                        letterSpacing="tight"
-                        color="brand.950"
-                        mb={6}
+            {/* Content */}
+            <Box position="relative" zIndex="1" pt={{ base: "48", md: "64" }} pb="40">
+                <Container maxW="container.xl" textAlign="center">
+                    <MotionBox
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }}
                     >
-                        Estudios de Títulos <br />
-                        <Text
-                            as="span"
-                            bgGradient="linear(to-r, brand.600, purple.600, brand.400)"
-                            bgClip="text"
-                            position="relative"
-                            _after={{
-                                content: "''",
-                                position: 'absolute',
-                                bottom: '10px',
-                                left: 0,
-                                w: 'full',
-                                h: '20px',
-                                bg: 'brand.500',
-                                opacity: 0.1,
-                                zIndex: -1,
-                                transform: 'skewX(-10deg)',
-                                display: { base: 'none', md: 'block' }
-                            }}
-                        >
-                            Potenciados con IA
-                        </Text>
-                    </MotionHeading>
-
-                    <MotionText
-                        fontSize={{ base: "lg", md: "2xl" }}
-                        color="gray.600"
-                        maxW="2xl"
-                        mx="auto"
-                        mb={10}
-                        lineHeight="tall"
-                        fontWeight="medium"
-                    >
-                        Revolucionamos el sector inmobiliario. Aprobación legal en tiempo récord con precisión milimétrica y validación experta.
-                    </MotionText>
-
-                    <Flex
-                        direction={{ base: 'column', sm: 'row' }}
-                        justify="center"
-                        gap={4}
-                        align="center"
-                        mb={20}
-                    >
-                        <Button
-                            as="a"
-                            href="#pricing"
-                            size="lg"
-                            h="16"
-                            px={10}
-                            fontSize="lg"
-                            bg="brand.950"
-                            color="white"
-                            rightIcon={<HiArrowRight />}
-                            _hover={{ bg: 'brand.800', transform: 'translateY(-2px)', boxShadow: 'xl' }}
-                            transition="all 0.2s"
-                            borderRadius="2xl"
-                            boxShadow="lg"
-                        >
-                            Comenzar Ahora
-                        </Button>
-                        <Button
-                            as="a"
-                            href="#services"
-                            size="lg"
-                            h="16"
-                            px={10}
-                            fontSize="lg"
-                            variant="outline"
-                            bg="white"
-                            color="brand.950"
-                            border="1px solid"
-                            borderColor="gray.200"
-                            _hover={{ bg: 'gray.50', borderColor: 'brand.200' }}
-                            borderRadius="2xl"
-                            boxShadow="sm"
-                        >
-                            Ver Tecnología
-                        </Button>
-                    </Flex>
-
-                    <SimpleGrid
-                        columns={{ base: 1, md: 3 }}
-                        spacing={8}
-                        maxW="4xl"
-                        mx="auto"
-                        bg="white"
-                        p={2}
-                        borderRadius="3xl"
-                        boxShadow="sm"
-                        border="1px solid"
-                        borderColor="gray.100"
-                    >
-                        {[
-                            { icon: FaBolt, text: "Entrega Express", subtext: "Análisis 4x más rápido" },
-                            { icon: FaGlobe, text: "100% Digital", subtext: "Sin trámites presenciales" },
-                            { icon: FaCertificate, text: "Garantía Legal", subtext: "Revisión doble experto" }
-                        ].map((feature, i) => (
-                            <Flex
-                                key={i}
-                                align="center"
-                                justify="center"
-                                gap={4}
-                                p={4}
-                                borderRadius="2xl"
-                                _hover={{ bg: 'gray.50' }}
-                                transition="bg 0.2s"
+                        <Flex justify="center" mb={6}>
+                            <Badge
+                                px={6} py={3}
+                                borderRadius="full"
+                                bg="whiteAlpha.100"
+                                color="gold.400"
+                                border="1px solid"
+                                borderColor="whiteAlpha.200"
+                                backdropFilter="blur(10px)"
+                                fontSize="xs"
+                                fontWeight="900"
+                                letterSpacing="widest"
+                                textTransform="uppercase"
+                                display="flex"
+                                alignItems="center"
+                                gap={3}
+                                boxShadow="0 4px 20px rgba(0,0,0,0.2)"
                             >
-                                <Box
-                                    p={3}
-                                    bg="brand.50"
-                                    color="brand.600"
-                                    borderRadius="xl"
-                                >
-                                    <Icon as={feature.icon} w={5} h={5} />
-                                </Box>
-                                <Box textAlign="left">
-                                    <Text fontWeight="bold" fontSize="sm" color="brand.950">{feature.text}</Text>
-                                    <Text fontSize="xs" color="gray.500">{feature.subtext}</Text>
-                                </Box>
-                            </Flex>
-                        ))}
-                    </SimpleGrid>
+                                <Icon as={HiSparkles} />
+                                Tecnología Legal 2025
+                            </Badge>
+                        </Flex>
 
-                </MotionBox>
-            </Container>
+                        <MotionHeading
+                            as="h1"
+                            fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
+                            fontWeight="900"
+                            lineHeight="1.05"
+                            letterSpacing="-0.03em"
+                            color="white"
+                            mb={6}
+                            maxW="4xl"
+                            mx="auto"
+                        >
+                            ¿Confiarías tu mayor inversión a <br />
+                            <Text as="span" color="gray.400" fontWeight="400" fontSize="0.7em">
+                                métodos de hace 50 años?
+                            </Text>
+                        </MotionHeading>
+
+                        <MotionText
+                            fontSize={{ base: "xl", md: "2xl" }}
+                            color="gray.200"
+                            maxW="3xl"
+                            mx="auto"
+                            mb={3}
+                            lineHeight="1.5"
+                            fontWeight="500"
+                        >
+                            Tu Estudio de Títulos + Compraventa con <Text as="span" bgGradient="linear(to-r, gold.300, gold.500)" bgClip="text" fontWeight="800">Precisión de IA</Text> y Firma Legal Experta.
+                        </MotionText>
+
+                        <Text fontSize="md" color="gold.400" fontWeight="bold" mb={12}>
+                            Cero riesgos ocultos. Tarifa plana de $500.000.
+                        </Text>
+
+                        <Flex
+                            direction={{ base: 'column', sm: 'row' }}
+                            justify="center"
+                            gap={5}
+                            align="center"
+                            mb={20}
+                        >
+                            <Button
+                                as="a"
+                                href="#pricing"
+                                size="lg"
+                                h="16"
+                                px={10}
+                                fontSize="md"
+                                bg="gold.500"
+                                color="brand.950"
+                                rightIcon={<HiArrowRight />}
+                                _hover={{ bg: 'gold.400', transform: 'scale(1.05)', boxShadow: '0 20px 30px -10px rgba(245, 158, 11, 0.4)' }}
+                                borderRadius="full"
+                                fontWeight="900"
+                                letterSpacing="wide"
+                            >
+                                Asegurar Mi Inversión
+                            </Button>
+                        </Flex>
+
+                        {/* Stats Section with Consistent Data */}
+                        <SimpleGrid
+                            columns={{ base: 1, md: 3 }}
+                            spacing={8}
+                            maxW="5xl"
+                            mx="auto"
+                        >
+                            {[
+                                { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Tecnología IA + Revisión" },
+                                { icon: FaFileContract, stat: "72h", label: "Tiempo Entrega", sub: "vs 3+ semanas tradicional" },
+                                { icon: FaShieldHalved, stat: "$500k", label: "Precio Fijo", sub: "vs $800k+ promedio mercado" }
+                            ].map((item, i) => (
+                                <Flex
+                                    key={i}
+                                    bg="whiteAlpha.50"
+                                    backdropFilter="blur(16px)"
+                                    p={8}
+                                    borderRadius="2xl"
+                                    border="1px solid"
+                                    borderColor="whiteAlpha.100"
+                                    direction="column"
+                                    align="center"
+                                    textAlign="center"
+                                    transition="all 0.3s"
+                                    _hover={{ bg: "whiteAlpha.100", transform: "translateY(-5px)", borderColor: "gold.500" }}
+                                >
+                                    <Icon as={item.icon} w={8} h={8} color="gold.400" mb={4} />
+                                    <Stat>
+                                        <StatNumber fontSize="4xl" fontWeight="900" color="white" mb={1}>{item.stat}</StatNumber>
+                                        <StatLabel fontSize="md" fontWeight="700" color="gray.300" mb={2}>{item.label}</StatLabel>
+                                        <Text fontSize="xs" color="gray.500">{item.sub}</Text>
+                                    </Stat>
+                                </Flex>
+                            ))}
+                        </SimpleGrid>
+
+                    </MotionBox>
+                </Container>
+            </Box>
         </Box>
     );
 };

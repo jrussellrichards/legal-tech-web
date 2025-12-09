@@ -1,33 +1,53 @@
 import React from 'react';
-import { Box, Container, Flex, Text, Link, VStack, Heading } from '@chakra-ui/react';
+import { Box, Container, Flex, Text, Link, VStack, Heading, HStack, Icon, Divider } from '@chakra-ui/react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => {
     return (
-        <Box bg="brand.950" color="white" py={16} borderTop="1px solid" borderColor="gray.900">
+        <Box bg="brand.950" color="white" pt={20} pb={10} borderTop="1px solid" borderColor="brand.800">
             <Container maxW="container.xl">
-                <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="start" gap={10} mb={12}>
-                    <Box>
-                        <Text fontSize="2xl" fontWeight="800" color="white" mb={4}>
-                            Legal<Text as="span" color="brand.500">Tech</Text>
+                <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="start" gap={12} mb={12}>
+                    <Box maxW="sm">
+                        <Text fontSize="3xl" fontWeight="900" color="white" mb={4} letterSpacing="tight">
+                            Legal<Text as="span" color="gold.400">Tech</Text>
                         </Text>
-                        <Text color="gray.400" maxW="xs" lineHeight="relaxed">
-                            Revolucionando el mercado legal con tecnología e inteligencia artificial.
+                        <Text color="gray.400" lineHeight="relaxed" mb={6}>
+                            Revolucionando el mercado legal inmobiliario con tecnología de punta y el respaldo de abogados expertos.
+                        </Text>
+                        <Text color="gray.500" fontSize="sm">
+                            © {new Date().getFullYear()} Legal Tech SpA. <br />
+                            Todos los derechos reservados.
                         </Text>
                     </Box>
-                    <Box textAlign={{ base: 'left', md: 'right' }}>
-                        <Heading as="h4" size="md" mb={4} color="white">Contacto</Heading>
-                        <VStack align={{ base: 'start', md: 'end' }} spacing={2}>
-                            <Link href="mailto:contacto@legaltech.cl" color="gray.400" _hover={{ color: 'white' }}>contacto@legaltech.cl</Link>
-                            <Link href="tel:+56912345678" color="gray.400" _hover={{ color: 'white' }}>+56 9 1234 5678</Link>
-                        </VStack>
-                    </Box>
+
+                    <VStack align={{ base: 'start', md: 'end' }} spacing={4}>
+                        <Heading as="h4" size="md" mb={2} color="white">Contacto</Heading>
+                        <HStack color="gray.300" _hover={{ color: 'gold.400' }} transition="color 0.2s">
+                            <Icon as={FaEnvelope} />
+                            <Link href="mailto:contacto@legaltech.cl">contacto@legaltech.cl</Link>
+                        </HStack>
+                        <HStack color="gray.300" _hover={{ color: 'gold.400' }} transition="color 0.2s">
+                            <Icon as={FaPhone} />
+                            <Link href="tel:+56951096594">+56 9 5109 6594</Link>
+                        </HStack>
+                        <HStack color="gray.300">
+                            <Icon as={FaMapMarkerAlt} />
+                            <Text>Santiago, Chile</Text>
+                        </HStack>
+                    </VStack>
                 </Flex>
 
-                <Box pt={8} borderTop="1px solid" borderColor="gray.900" textAlign="center">
-                    <Text color="gray.600" fontSize="sm">
-                        © {new Date().getFullYear()} Legal Tech. Todos los derechos reservados.
+                <Divider borderColor="brand.800" mb={8} />
+
+                <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center" gap={4}>
+                    <Text color="gray.500" fontSize="sm" textAlign={{ base: 'center', md: 'left' }}>
+                        Desarrollado con tecnología de vanguardia para tu seguridad.
                     </Text>
-                </Box>
+                    <HStack spacing={6} fontSize="sm" color="gray.400">
+                        <Link _hover={{ color: 'gold.400' }}>Términos de Servicio</Link>
+                        <Link _hover={{ color: 'gold.400' }}>Política de Privacidad</Link>
+                    </HStack>
+                </Flex>
             </Container>
         </Box>
     );
