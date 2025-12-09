@@ -21,9 +21,9 @@ const WhyNow = () => {
 
                     {/* ACT 1: THE INVISIBLE ENEMY */}
                     <Box textAlign="center" maxW="3xl" mx="auto" position="relative">
-                        <Badge colorScheme="red" variant="subtle" mb={4} px={3} py={1} borderRadius="full">El Problema Oculto</Badge>
+                        <Badge colorScheme="red" variant="solid" mb={4} px={4} py={1} borderRadius="full" textTransform="uppercase" letterSpacing="widest" fontSize="xs">Ten mucho cuidado</Badge>
                         <Heading as="h2" size="2xl" color="brand.950" mb={6} lineHeight="tight" fontWeight="900">
-                            Un pequeño error manual <br />
+                            Un pequeño error humano <br />
                             <Text as="span" color="red.500">puede costar tu propiedad.</Text>
                         </Heading>
                         <Text fontSize="xl" color="gray.600" lineHeight="tall">
@@ -97,19 +97,19 @@ const WhyNow = () => {
 
                             <VStack divider={<StackDivider borderColor="whiteAlpha.200" />} spacing={6} align="stretch">
                                 <Flex justify="space-between" align="center">
-                                    <Text color="gray.400" flex="1">Precisión</Text>
-                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">Humana (Falible)</Text>
-                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">IA + Experto (99.8%)</Text>
+                                    <Text color="gray.400" flex="1">Riesgo (Rechazo CBR)</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">22% Promedio</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">Menos del 1% (Validación IA)</Text>
                                 </Flex>
                                 <Flex justify="space-between" align="center">
-                                    <Text color="gray.400" flex="1">Velocidad</Text>
-                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">3 Semanas</Text>
-                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">72 Horas</Text>
+                                    <Text color="gray.400" flex="1">Tiempo Total</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">45-60 Días</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">Gestión Acelerada</Text>
                                 </Flex>
                                 <Flex justify="space-between" align="center">
-                                    <Text color="gray.400" flex="1">Tecnología</Text>
-                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">Papel y Lápiz</Text>
-                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">Blockchain & NLP</Text>
+                                    <Text color="gray.400" flex="1">Costo Legal</Text>
+                                    <Text color="red.300" flex="1" textAlign="center" textDecoration="line-through">1% Valor Propiedad</Text>
+                                    <Text color="white" flex="1" textAlign="right" fontWeight="bold">Tarifa Plana Fija</Text>
                                 </Flex>
                             </VStack>
                         </Box>

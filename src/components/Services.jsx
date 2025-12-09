@@ -1,102 +1,96 @@
 import React from 'react';
-import { Box, Container, Heading, Text, SimpleGrid, VStack, HStack, Icon, Flex, Circle } from '@chakra-ui/react';
-import { FaFileSignature, FaLandmark, FaMagnifyingGlass, FaHouseCircleCheck } from 'react-icons/fa6';
+import { Box, Container, Heading, Text, SimpleGrid, Flex, VStack } from '@chakra-ui/react';
 
-const FlowItem = ({ number, title, text }) => (
-    <Flex gap={6} position="relative" mb={8}>
-        <Box position="relative" zIndex={1}>
-            <Circle
-                size={10}
-                bg="brand.600"
-                color="white"
-                fontWeight="bold"
-                shadow="md"
+const HorizontalStep = ({ number, title, description, isLast }) => (
+    <Box position="relative" w="full" px={4} textAlign="center">
+
+        {/* Connector Line (Desktop Only) */}
+        {!isLast && (
+            <Box
+                display={{ base: 'none', md: 'block' }}
+                position="absolute"
+                top="20px"
+                left="50%"
+                right="-50%"
+                height="2px"
+                bg="gray.200"
+                zIndex={0}
+            />
+        )}
+
+        <VStack spacing={6} position="relative" zIndex={1}>
+            {/* Number Circle */}
+            <Flex
+                w={10}
+                h={10}
+                align="center"
+                justify="center"
+                borderRadius="full"
+                bg="brand.950"
+                color="gold.400"
+                fontWeight="900"
+                fontSize="lg"
+                boxShadow="lg"
+                border="2px solid"
+                borderColor="gold.500"
             >
                 {number}
-            </Circle>
-            {/* Connector Line */}
-            {number !== 4 && (
-                <Box
-                    position="absolute"
-                    top={10}
-                    left="50%"
-                    transform="translateX(-50%)"
-                    w="2px"
-                    h="calc(100% + 20px)"
-                    bg="gray.300" // Slightly darker for visibility
-                    zIndex={-1}
-                />
-            )}
-        </Box>
-        <Box pb={4}>
-            <Heading size="md" mb={2} color="brand.950">{title}</Heading>
-            <Text color="gray.500" lineHeight="relaxed">{text}</Text>
-        </Box>
-    </Flex>
+            </Flex>
+
+            {/* Content */}
+            <Box>
+                <Heading as="h3" size="sm" mb={3} color="brand.950" fontWeight="700">
+                    {title}
+                </Heading>
+                <Text color="gray.500" fontSize="sm" lineHeight="relaxed" maxW="xs" mx="auto">
+                    {description}
+                </Text>
+            </Box>
+        </VStack>
+    </Box>
 );
 
 const Services = () => {
     return (
-        <Box py={32} bg="#F1F5F9" id="services"> {/* Slighly darker shade for separation */}
+        <Box py={24} bg="white" id="process">
             <Container maxW="container.xl">
-                <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={20} alignItems="center">
-                    <Box>
-                        <Text color="brand.600" fontWeight="bold" mb={2} letterSpacing="wide" textTransform="uppercase" fontSize="sm">
-                            Flujo de Trabajo
-                        </Text>
-                        <Heading as="h2" size="2xl" mb={6} color="brand.950" letterSpacing="tight">
-                            Simplificamos lo complejo.
-                        </Heading>
-                        <Text fontSize="xl" color="gray.600" mb={12}>
-                            Desde la recepción de antecedentes hasta la inscripción en el Conservador. Nosotros nos encargamos de la burocracia.
-                        </Text>
 
-                        <SimpleGrid columns={2} spacing={6}>
-                            <Box p={8} bg="white" borderRadius="2xl" border="1px solid" borderColor="gray.100" shadow="md">
-                                <Icon as={FaMagnifyingGlass} w={6} h={6} color="brand.600" mb={4} />
-                                <Heading size="sm" mb={2} color="brand.900">Rigurosidad</Heading>
-                                <Text fontSize="sm" color="gray.600">Revisión exhaustiva al detalle.</Text>
-                            </Box>
-                            <Box p={8} bg="white" borderRadius="2xl" border="1px solid" borderColor="gray.100" shadow="md">
-                                <Icon as={FaLandmark} w={6} h={6} color="brand.600" mb={4} />
-                                <Heading size="sm" mb={2} color="brand.900">Gestión</Heading>
-                                <Text fontSize="sm" color="gray.600">Trámites notariales incluidos.</Text>
-                            </Box>
-                        </SimpleGrid>
-                    </Box>
+                {/* Header Section */}
+                <Box textAlign="center" mb={20} maxW="3xl" mx="auto">
+                    <Text color="gold.500" fontWeight="bold" mb={4} fontSize="xs" letterSpacing="widest" textTransform="uppercase">
+                        El Proceso
+                    </Text>
+                    <Heading as="h2" size="2xl" mb={6} color="brand.950" letterSpacing="-0.03em" fontWeight="900">
+                        De la promesa a tu llave en mano.
+                    </Heading>
+                    <Text fontSize="lg" color="gray.500">
+                        Un proceso blindado y acelerado: tú te enfocas en tu hogar, nosotros en la legalidad.
+                    </Text>
+                </Box>
 
-                    <Box
-                        bg="white"
-                        p={12}
-                        borderRadius="3xl"
-                        boxShadow="2xl"
-                        border="1px solid"
-                        borderColor="gray.100"
-                    >
-                        <Heading size="lg" mb={8} color="brand.950">Tu Camino a Casa</Heading>
-                        <VStack align="stretch" spacing={0}>
-                            <FlowItem
-                                number={1}
-                                title="Recopilación y Promesa"
-                                text="Aseguramos el negocio y reunimos los documentos."
-                            />
-                            <FlowItem
-                                number={2}
-                                title="Estudio de Títulos"
-                                text="Análisis legal profundo con apoyo de IA."
-                            />
-                            <FlowItem
-                                number={3}
-                                title="Firma Notarial"
-                                text="Coordinamos tu cita para firmar sin esperas."
-                            />
-                            <FlowItem
-                                number={4}
-                                title="Inscripción CBR"
-                                text="Tramitamos hasta obtener el dominio a tu nombre."
-                            />
-                        </VStack>
-                    </Box>
+                {/* Horizontal Timeline */}
+                <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 12, md: 0 }} position="relative">
+                    <HorizontalStep
+                        number="1"
+                        title="Reserva & Antecedentes"
+                        description="Aseguramos la propiedad y recopilamos documentos clave."
+                    />
+                    <HorizontalStep
+                        number="2"
+                        title="Estudio de Títulos"
+                        description="Doble validación (IA + Abogado) para seguridad total."
+                    />
+                    <HorizontalStep
+                        number="3"
+                        title="Escritura & Firma"
+                        description="Redacción del contrato final y coordinación notarial."
+                    />
+                    <HorizontalStep
+                        number="4"
+                        title="Inscripción & Entrega"
+                        description="Seguimiento en CBR hasta que la casa es tuya."
+                        isLast
+                    />
                 </SimpleGrid>
             </Container>
         </Box>

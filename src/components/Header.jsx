@@ -17,55 +17,89 @@ const Header = () => {
         <Box
             as="header"
             position="fixed"
-            top={0}
+            top={4}
             left={0}
             right={0}
             zIndex="1000"
-            py={4}
-            px={4}
-            pointerEvents="none" // Allow clicking through the empty space
+            pointerEvents="none"
         >
             <Container maxW="container.xl">
                 <Flex
-                    pointerEvents="auto" // Re-enable clicks on the header itself
+                    pointerEvents="auto"
                     as={motion.div}
+                    layout
                     initial={{ y: -20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, width: isScrolled ? '100%' : '100%' }}
+                    animate={{
+                        y: 0,
+                        opacity: 1,
+                        width: isScrolled ? 'fit-content' : '100%',
+                        backgroundColor: isScrolled ? "rgba(2, 6, 23, 0.85)" : "transparent",
+                        borderColor: isScrolled ? "rgba(250, 204, 21, 0.3)" : "transparent",
+                    }}
+                    transition={{ duration: 0.4, type: "spring", stiffness: 100 }}
                     justify="space-between"
                     align="center"
-                    bg={isScrolled ? "rgba(255, 255, 255, 0.90)" : "rgba(255, 255, 255, 0.5)"}
-                    backdropFilter="blur(12px)"
+                    backdropFilter={isScrolled ? "blur(16px)" : "blur(0px)"}
                     border="1px solid"
-                    borderColor={isScrolled ? "gray.200" : "whiteAlpha.400"}
                     borderRadius="full"
                     py={3}
-                    px={8}
-                    boxShadow={isScrolled ? "lg" : "none"}
-                    maxW={isScrolled ? "container.xl" : "container.lg"}
+                    px={isScrolled ? 8 : 0}
                     mx="auto"
-                    transition="all 0.4s ease"
+                    boxShadow={isScrolled ? "0 10px 30px -10px rgba(0,0,0,0.5)" : "none"}
                 >
-                    <Text fontSize="xl" fontWeight="900" letterSpacing="tight" color="brand.950">
-                        Legal<Text as="span" color="brand.600">Tech</Text>
-                    </Text>
-
-                    <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>
-                        <Link href="#benefits" fontWeight="600" fontSize="sm" color="gray.600" _hover={{ color: 'brand.600' }}>Seguridad</Link>
-                        <Link href="#services" fontWeight="600" fontSize="sm" color="gray.600" _hover={{ color: 'brand.600' }}>Proceso</Link>
-                        <Link href="#team" fontWeight="600" fontSize="sm" color="gray.600" _hover={{ color: 'brand.600' }}>Equipo</Link>
-                        <Button
-                            as="a"
-                            href="#pricing"
-                            size="sm"
-                            colorScheme="blue"
-                            bg="brand.950"
-                            borderRadius="full"
-                            px={6}
-                            _hover={{ bg: 'brand.800', transform: 'scale(1.05)' }}
-                        >
-                            Iniciar Compra
-                        </Button>
+                    {/* Logo Area */}
+                    <HStack spacing={2} cursor="pointer" mr={isScrolled ? 8 : 0}>
+                        <Box w={3} h={3} bg="gold.400" borderRadius="full" boxShadow="0 0 10px gold" />
+                        <Text fontSize="xl" fontWeight="900" letterSpacing="-0.02em" color={isScrolled ? "white" : "white"}>
+                            Legal<Text as="span" color="gold.400">Tech</Text>
+                        </Text>
                     </HStack>
+
+                    {/* Navigation - Hidden on Mobile */}
+                    <HStack
+                        spacing={8}
+                        display={{ base: 'none', md: 'flex' }}
+                        bg={isScrolled ? "transparent" : "rgba(0,0,0,0.3)"} // Subtle bg on hero for readability
+                        p={isScrolled ? 0 : 2}
+                        px={isScrolled ? 0 : 6}
+                        borderRadius={isScrolled ? "none" : "full"}
+                        backdropFilter={isScrolled ? "none" : "blur(10px)"}
+                        border={isScrolled ? "none" : "1px solid rgba(255,255,255,0.1)"}
+                    >
+                        {['Seguridad', 'Proceso', 'Nosotros'].map((item) => (
+                            <Link
+                                key={item}
+                                href={`#${item.toLowerCase()}`}
+                                fontWeight="500"
+                                fontSize="sm"
+                                color="whiteAlpha.900"
+                                _hover={{ color: 'gold.400' }}
+                                transition="color 0.2s"
+                            >
+                                {item}
+                            </Link>
+                        ))}
+                    </HStack>
+
+                    {/* CTA Button */}
+                    <Button
+                        as="a"
+                        href="#pricing"
+                        size="sm"
+                        ml={isScrolled ? 8 : 4}
+                        bg={isScrolled ? "gold.400" : "white"}
+                        color={isScrolled ? "brand.950" : "brand.950"}
+                        borderRadius="full"
+                        px={6}
+                        fontWeight="bold"
+                        _hover={{
+                            transform: 'translateY(-2px)',
+                            bg: isScrolled ? "gold.300" : "gray.100",
+                            boxShadow: "lg"
+                        }}
+                    >
+                        Iniciar Compra
+                    </Button>
                 </Flex>
             </Container>
         </Box>

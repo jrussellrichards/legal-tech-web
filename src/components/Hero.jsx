@@ -28,13 +28,13 @@ const Hero = () => {
                     h="100%"
                     objectFit="cover"
                     objectPosition="center"
-                    opacity="0.25"
+                    opacity="0.8"
                 />
                 <Box
                     position="absolute"
                     inset="0"
                     bgGradient="linear(to-b, brand.950, rgba(2, 6, 23, 0.9), brand.950)"
-                    opacity="0.95"
+                    opacity="0.8"
                 />
             </Box>
 
@@ -137,7 +137,7 @@ const Hero = () => {
                         >
                             {[
                                 { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Doble filtro: IA + Senior" },
-                                { icon: FaFileContract, stat: "72h", label: "Estudio Títulos", sub: "Entrega informes garantizada" },
+                                { icon: FaFileContract, stat: "Sin Esperas", label: "Gestión Inmediata", sub: "Iniciamos apenas nos contactas" },
                                 { icon: FaShieldHalved, stat: "$500k", label: "Precio Fijo", sub: "Sin % del valor propiedad" }
                             ].map((item, i) => (
                                 <Flex
