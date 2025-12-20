@@ -81,7 +81,7 @@ const Landing = () => {
                                 Llevamos los servicios legales al <Text as="span" bgGradient="linear(to-r, gold.200, gold.500)" bgClip="text">Siglo XXI.</Text>
                             </Heading>
                             <Text fontSize="2xl" color="gray.300" lineHeight="relaxed">
-                                Protegemos tus decisiones más importantes fusionando la experiencia de abogados de élite con la potencia de la inteligencia artificial.
+                                Somos más rápidos, precisos y accesibles. Implementamos tecnología del Siglo XXI para entregarte excelencia legal sin los costos ni demoras del pasado.
                             </Text>
                         </Box>
 
@@ -126,23 +126,23 @@ const Landing = () => {
                     <SimpleGrid columns={{ base: 1, md: 3 }} spacing={12} pt={10} borderTop="1px solid" borderColor="whiteAlpha.100">
                         <VStack align="start" spacing={4}>
                             <Icon as={FaBolt} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Velocidad</Heading>
+                            <Heading size="md">Más Rápidos</Heading>
                             <Text color="gray.400">
-                                Resultados en tiempo récord. La tecnología trabaja 24/7 para que no pierdas oportunidades.
-                            </Text>
-                        </VStack>
-                        <VStack align="start" spacing={4}>
-                            <Icon as={FaHandshake} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Transparencia</Heading>
-                            <Text color="gray.400">
-                                Precios fijos, sin letra chica ni sorpresas. Sabes exactamente qué recibes y cuánto pagas.
+                                La tecnología acelera cada proceso. Entregamos resultados en una fracción del tiempo de un estudio tradicional.
                             </Text>
                         </VStack>
                         <VStack align="start" spacing={4}>
                             <Icon as={FaBullseye} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Precisión</Heading>
+                            <Heading size="md">Menos Errores</Heading>
                             <Text color="gray.400">
-                                Doble validación que elimina el error humano. Seguridad jurídica garantizada al máximo nivel.
+                                Nuestra doble validación (IA + Abogado Experto) blinda tus documentos y minimiza cualquier riesgo humano.
+                            </Text>
+                        </VStack>
+                        <VStack align="start" spacing={4}>
+                            <Icon as={FaHandshake} w={8} h={8} color="gold.400" />
+                            <Heading size="md">Precio Justo</Heading>
+                            <Text color="gray.400">
+                                Gracias a la tecnología somos más económicos. Eliminamos ineficiencias para ofrecerte excelencia legal a un valor accesible.
                             </Text>
                         </VStack>
                     </SimpleGrid>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box, Container, Flex, Text, Link, VStack, Heading, HStack, Icon, Divider } from '@chakra-ui/react';
+import { Box, Container, Flex, Text, Link, VStack, Heading, HStack, Icon, Divider, Image } from '@chakra-ui/react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import logoImg from '../assets/logo.png';
 
 const Footer = () => {
     return (
@@ -8,9 +9,13 @@ const Footer = () => {
             <Container maxW="container.xl">
                 <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="start" gap={12} mb={12}>
                     <Box maxW="sm">
-                        <Text fontSize="3xl" fontWeight="900" color="white" mb={4} letterSpacing="tight">
-                            Parley
-                        </Text>
+                        <Image
+                            src={logoImg}
+                            alt="Parley Logo"
+                            h="150px"
+                            mb={6}
+                            filter="brightness(0) invert(1)"
+                        />
                         <Text color="gray.400" lineHeight="relaxed" mb={6}>
                             Combinamos inteligencia artificial y expertos de élite para proteger tus decisiones más importantes.
                         </Text>

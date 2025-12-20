@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Container, Flex, Button, Text, Link, HStack } from '@chakra-ui/react';
+import { Box, Container, Flex, Button, Text, Link, HStack, Image } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import logoImg from '../assets/logo.png';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -49,12 +50,16 @@ const Header = () => {
                     boxShadow={isScrolled ? "0 10px 30px -10px rgba(0,0,0,0.5)" : "none"}
                 >
                     {/* Logo Area */}
-                    <HStack spacing={2} cursor="pointer" mr={isScrolled ? 8 : 0}>
-                        <Box w={3} h={3} bg="gold.400" borderRadius="full" boxShadow="0 0 10px gold" />
-                        <Text fontSize="xl" fontWeight="900" letterSpacing="-0.02em" color={isScrolled ? "white" : "white"}>
-                            Parley
-                        </Text>
-                    </HStack>
+                    <Link as={RouterLink} to="/" mr={isScrolled ? 8 : 0} display="flex" alignItems="center">
+                        <Image
+                            src={logoImg}
+                            alt="Parley Logo"
+                            h="90px"
+                            width="auto"
+                            objectFit="contain"
+                            filter="brightness(0) invert(1)" // White logo for dark bg/overlay
+                        />
+                    </Link>
 
                     {/* Navigation - Hidden on Mobile */}
                     <HStack
