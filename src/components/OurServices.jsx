@@ -90,7 +90,7 @@ const OurServices = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <Box py={32} bg="white" id="services">
+        <Box py={32} bg="gray.50" id="services" borderTop="1px solid" borderBottom="1px solid" borderColor="gray.200">
             <Container maxW="container.xl">
                 {/* Header */}
                 <Box textAlign="center" mb={16}>

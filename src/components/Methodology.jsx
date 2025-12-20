@@ -4,7 +4,7 @@ import { FaUserTie, FaRobot } from 'react-icons/fa';
 
 const Methodology = () => {
     return (
-        <Box py={32} bg="gray.50" position="relative" overflow="hidden" id="methodology">
+        <Box py={32} bg="white" position="relative" overflow="hidden" id="methodology">
             <Container maxW="container.xl">
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={20} alignItems="center">
 
