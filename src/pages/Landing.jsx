@@ -1,12 +1,11 @@
 import React from 'react';
 import { Box, Container, Heading, Text, Button, VStack, Flex, SimpleGrid, Icon, useDisclosure } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router-dom';
-import { FaGlobeAmericas, FaBalanceScale, FaHandshake } from 'react-icons/fa';
+import { FaHandshake, FaBolt, FaBullseye } from 'react-icons/fa';
 import { HiArrowRight } from 'react-icons/hi2';
 import Mission from '../components/Mission';
 import OurServices from '../components/OurServices';
 import Methodology from '../components/Methodology';
-import Results from '../components/Results';
 import Team from '../components/Team';
 import WhatsAppButton from '../components/WhatsAppButton';
 import ContactModal from '../components/ContactModal';
@@ -79,11 +78,10 @@ const Landing = () => {
                                 Revolución Legal Latam
                             </Text>
                             <Heading as="h1" size="4xl" fontWeight="900" lineHeight="1.1" mb={6}>
-                                El nuevo estándar en <Text as="span" bgGradient="linear(to-r, gold.200, gold.500)" bgClip="text">servicios legales globales.</Text>
+                                Llevamos los servicios legales al <Text as="span" bgGradient="linear(to-r, gold.200, gold.500)" bgClip="text">Siglo XXI.</Text>
                             </Heading>
                             <Text fontSize="2xl" color="gray.300" lineHeight="relaxed">
-                                Parley combina inteligencia artificial y expertos de élite para proteger tus decisiones más importantes.
-                                Precisión absoluta para personas y empresas.
+                                Protegemos tus decisiones más importantes fusionando la experiencia de abogados de élite con la potencia de la inteligencia artificial.
                             </Text>
                         </Box>
 
@@ -125,27 +123,26 @@ const Landing = () => {
                         <ContactModal isOpen={isOpen} onClose={onClose} />
                     </VStack>
 
-                    {/* Pillars */}
                     <SimpleGrid columns={{ base: 1, md: 3 }} spacing={12} pt={10} borderTop="1px solid" borderColor="whiteAlpha.100">
                         <VStack align="start" spacing={4}>
-                            <Icon as={FaBalanceScale} w={8} h={8} color="gold.400" />
-                            <Heading size="md">IA + Abogados</Heading>
+                            <Icon as={FaBolt} w={8} h={8} color="gold.400" />
+                            <Heading size="md">Velocidad</Heading>
                             <Text color="gray.400">
-                                Doble validación: inteligencia artificial de última generación respaldada por expertos legales senior.
+                                Resultados en tiempo récord. La tecnología trabaja 24/7 para que no pierdas oportunidades.
                             </Text>
                         </VStack>
                         <VStack align="start" spacing={4}>
                             <Icon as={FaHandshake} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Transparencia Total</Heading>
+                            <Heading size="md">Transparencia</Heading>
                             <Text color="gray.400">
                                 Precios fijos, sin letra chica ni sorpresas. Sabes exactamente qué recibes y cuánto pagas.
                             </Text>
                         </VStack>
                         <VStack align="start" spacing={4}>
-                            <Icon as={FaGlobeAmericas} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Resultados Rápidos</Heading>
+                            <Icon as={FaBullseye} w={8} h={8} color="gold.400" />
+                            <Heading size="md">Precisión</Heading>
                             <Text color="gray.400">
-                                Lo que antes tomaba semanas, ahora toma días. Velocidad sin sacrificar calidad ni precisión.
+                                Doble validación que elimina el error humano. Seguridad jurídica garantizada al máximo nivel.
                             </Text>
                         </VStack>
                     </SimpleGrid>
@@ -161,9 +158,6 @@ const Landing = () => {
 
             {/* Methodology Section (How we do it) */}
             <Methodology />
-
-            {/* Results Section (Proof) */}
-            <Results />
 
             {/* Team Section (Full Width) */}
             <Team />
