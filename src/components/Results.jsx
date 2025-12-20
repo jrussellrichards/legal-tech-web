@@ -12,20 +12,20 @@ const Results = () => {
                     <VStack align="start" spacing={8}>
                         <Box>
                             <Text color="gold.500" fontWeight="bold" fontSize="sm" letterSpacing="widest" textTransform="uppercase" mb={2}>
-                                El Problema Real
+                                Tecnología + Experiencia
                             </Text>
                             <Heading size="2xl" lineHeight="1.1" fontWeight="900">
-                                El error humano es inevitable. <br />
-                                <Text as="span" color="gray.400">Nosotros lo hackeamos.</Text>
+                                Precisión que ningún humano <br />
+                                <Text as="span" color="gold.400">puede igualar solo.</Text>
                             </Heading>
                         </Box>
 
                         <Text fontSize="xl" color="gray.300" lineHeight="relaxed">
-                            Estudios revelan que la revisión legal manual tiene una tasa de error del <Text as="span" color="white" fontWeight="bold">15% al 20%</Text> por fatiga natural. En contratos complejos o decisiones corporativas, ese margen es un riesgo inaceptable.
+                            Nuestra IA analiza cada documento con una precisión del <Text as="span" color="white" fontWeight="bold">99.8%</Text>, eliminando el margen de error humano. Pero la tecnología sola no basta.
                         </Text>
 
                         <Text fontSize="xl" color="gray.300" lineHeight="relaxed">
-                            En Parley, la IA hace el trabajo pesado y nuestros abogados expertos toman las decisiones clave. El resultado: <Text as="span" color="gold.400" fontWeight="bold">cero errores, máxima velocidad.</Text>
+                            Por eso, cada análisis es validado por abogados senior que aportan el criterio que solo la experiencia da. <Text as="span" color="gold.400" fontWeight="bold">Lo mejor de ambos mundos.</Text>
                         </Text>
                     </VStack>
 

@@ -27,12 +27,12 @@ const HorizontalStep = ({ number, title, description, isLast }) => (
                 justify="center"
                 borderRadius="full"
                 bg="brand.950"
-                color="gold.400"
+                color="brick.400"
                 fontWeight="900"
                 fontSize="lg"
                 boxShadow="lg"
                 border="2px solid"
-                borderColor="gold.500"
+                borderColor="brick.500"
             >
                 {number}
             </Flex>
@@ -57,7 +57,7 @@ const Services = () => {
 
                 {/* Header Section */}
                 <Box textAlign="center" mb={20} maxW="3xl" mx="auto">
-                    <Text color="gold.500" fontWeight="bold" mb={4} fontSize="xs" letterSpacing="widest" textTransform="uppercase">
+                    <Text color="brick.500" fontWeight="bold" mb={4} fontSize="xs" letterSpacing="widest" textTransform="uppercase">
                         El Proceso
                     </Text>
                     <Heading as="h2" size="2xl" mb={6} color="brand.950" letterSpacing="-0.03em" fontWeight="900">

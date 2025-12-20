@@ -54,7 +54,7 @@ const Hero = () => {
                                 px={6} py={3}
                                 borderRadius="full"
                                 bg="whiteAlpha.100"
-                                color="gold.400"
+                                color="brick.400"
                                 border="1px solid"
                                 borderColor="whiteAlpha.200"
                                 backdropFilter="blur(10px)"
@@ -84,7 +84,7 @@ const Hero = () => {
                             mx="auto"
                         >
                             Tu propiedad merece <br />
-                            <Text as="span" bgGradient="linear(to-r, gold.300, gold.500)" bgClip="text">
+                            <Text as="span" bgGradient="linear(to-r, brick.300, brick.500)" bgClip="text">
                                 precisión del siglo XXI.
                             </Text>
                         </MotionHeading>
@@ -101,7 +101,7 @@ const Hero = () => {
                             Estudio de Títulos con doble validación: <Text as="span" color="white" fontWeight="600">IA de última generación + Abogados expertos.</Text>
                         </MotionText>
 
-                        <Text fontSize="lg" color="gold.400" fontWeight="bold" mb={12}>
+                        <Text fontSize="lg" color="brick.400" fontWeight="bold" mb={12}>
                             Protege tu inversión más importante.
                         </Text>
 
@@ -118,10 +118,10 @@ const Hero = () => {
                                 h="16"
                                 px={10}
                                 fontSize="md"
-                                bg="gold.500"
+                                bg="brick.500"
                                 color="brand.950"
                                 rightIcon={<HiArrowRight />}
-                                _hover={{ bg: 'gold.400', transform: 'scale(1.05)', boxShadow: '0 20px 30px -10px rgba(245, 158, 11, 0.4)' }}
+                                _hover={{ bg: 'brick.400', transform: 'scale(1.05)', boxShadow: '0 20px 30px -10px rgba(185, 92, 74, 0.4)' }}
                                 borderRadius="full"
                                 fontWeight="900"
                                 letterSpacing="wide"
@@ -157,9 +157,9 @@ const Hero = () => {
                                     align="center"
                                     textAlign="center"
                                     transition="all 0.3s"
-                                    _hover={{ bg: "whiteAlpha.100", transform: "translateY(-5px)", borderColor: "gold.500" }}
+                                    _hover={{ bg: "whiteAlpha.100", transform: "translateY(-5px)", borderColor: "brick.500" }}
                                 >
-                                    <Icon as={item.icon} w={8} h={8} color="gold.400" mb={4} />
+                                    <Icon as={item.icon} w={8} h={8} color="brick.400" mb={4} />
                                     <Stat>
                                         <StatNumber fontSize="4xl" fontWeight="900" color="white" mb={1}>{item.stat}</StatNumber>
                                         <StatLabel fontSize="md" fontWeight="700" color="gray.300" mb={2}>{item.label}</StatLabel>

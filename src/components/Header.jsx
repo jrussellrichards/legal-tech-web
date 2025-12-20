@@ -102,7 +102,7 @@ const Header = () => {
                     {/* CTA Button */}
                     <Button
                         as="a"
-                        href="#pricing"
+                        href="#services"
                         size="sm"
                         ml={isScrolled ? 8 : 4}
                         bg={isScrolled ? "gold.400" : "white"}
@@ -116,7 +116,7 @@ const Header = () => {
                             boxShadow: "lg"
                         }}
                     >
-                        Iniciar Compra
+                        Comenzar
                     </Button>
                 </Flex>
             </Container>

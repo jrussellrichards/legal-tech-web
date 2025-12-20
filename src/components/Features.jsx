@@ -50,7 +50,7 @@ const Features = () => {
             <Container maxW="container.xl">
                 {/* Header Section */}
                 <Box mb={20} textAlign="center" maxW="3xl" mx="auto">
-                    <Text color="gold.500" fontWeight="bold" mb={4} fontSize="sm" letterSpacing="widest" textTransform="uppercase">
+                    <Text color="brick.500" fontWeight="bold" mb={4} fontSize="sm" letterSpacing="widest" textTransform="uppercase">
                         Inquebrantable
                     </Text>
                     <Heading as="h2" size="2xl" color="brand.950" mb={6} letterSpacing="-0.03em" fontWeight="900" lineHeight="1.1">

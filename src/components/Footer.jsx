@@ -12,7 +12,7 @@ const Footer = () => {
                             Parley
                         </Text>
                         <Text color="gray.400" lineHeight="relaxed" mb={6}>
-                            Revolucionando el mercado legal inmobiliario con tecnología de punta y el respaldo de abogados expertos.
+                            Combinamos inteligencia artificial y expertos de élite para proteger tus decisiones más importantes.
                         </Text>
                         <Text color="gray.500" fontSize="sm">
                             © {new Date().getFullYear()} Parley SpA. <br />

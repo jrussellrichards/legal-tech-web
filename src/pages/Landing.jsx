@@ -128,24 +128,24 @@ const Landing = () => {
                     {/* Pillars */}
                     <SimpleGrid columns={{ base: 1, md: 3 }} spacing={12} pt={10} borderTop="1px solid" borderColor="whiteAlpha.100">
                         <VStack align="start" spacing={4}>
-                            <Icon as={FaGlobeAmericas} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Alcance Regional</Heading>
-                            <Text color="gray.400">
-                                Construyendo la red legal más grande y confiable de Latinoamérica, sin fronteras.
-                            </Text>
-                        </VStack>
-                        <VStack align="start" spacing={4}>
                             <Icon as={FaBalanceScale} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Calidad Garantizada</Heading>
+                            <Heading size="md">IA + Abogados</Heading>
                             <Text color="gray.400">
-                                Estándares internacionales y tecnología jurídica para blindar cada operación y contrato.
+                                Doble validación: inteligencia artificial de última generación respaldada por expertos legales senior.
                             </Text>
                         </VStack>
                         <VStack align="start" spacing={4}>
                             <Icon as={FaHandshake} w={8} h={8} color="gold.400" />
-                            <Heading size="md">Acceso Universal</Heading>
+                            <Heading size="md">Transparencia Total</Heading>
                             <Text color="gray.400">
-                                Tecnología que reduce costos y barreras, haciendo que la excelencia legal sea accesible para todos.
+                                Precios fijos, sin letra chica ni sorpresas. Sabes exactamente qué recibes y cuánto pagas.
+                            </Text>
+                        </VStack>
+                        <VStack align="start" spacing={4}>
+                            <Icon as={FaGlobeAmericas} w={8} h={8} color="gold.400" />
+                            <Heading size="md">Resultados Rápidos</Heading>
+                            <Text color="gray.400">
+                                Lo que antes tomaba semanas, ahora toma días. Velocidad sin sacrificar calidad ni precisión.
                             </Text>
                         </VStack>
                     </SimpleGrid>

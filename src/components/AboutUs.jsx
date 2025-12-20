@@ -10,7 +10,7 @@ const AboutUs = () => {
                     {/* Left Column: Storytelling */}
                     <VStack spacing={8} align="start">
                         <Text
-                            color="gold.500"
+                            color="brick.500"
                             fontWeight="bold"
                             fontSize="xs"
                             letterSpacing="widest"
@@ -53,7 +53,7 @@ const AboutUs = () => {
                             </Box>
 
                             <Text fontWeight="medium" color="brand.950">
-                                Hoy transformamos un trámite lento e incierto en un proceso <Text as="span" bg="gold.100" px={1}>ágil y transparente.</Text>
+                                Hoy transformamos un trámite lento e incierto en un proceso <Text as="span" bg="brick.100" px={1}>ágil y transparente.</Text>
                             </Text>
                         </VStack>
                     </VStack>
@@ -67,7 +67,7 @@ const AboutUs = () => {
                             right="-20px"
                             w="100%"
                             h="100%"
-                            bg="gold.400"
+                            bg="brick.400"
                             borderRadius="3xl"
                             opacity="0.2"
                             transform="rotate(6deg)"

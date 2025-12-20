@@ -101,18 +101,18 @@ const Team = () => {
                     <VStack spacing={6} align="stretch">
                         <TeamMemberCompact
                             name="Rodrigo"
-                            role="CEO & Founder"
+                            role="CEO"
                             image={rodrigoImg}
                             description="Visionario empresarial con más de 15 años liderando transformaciones digitales en el sector legal."
                         />
                         <TeamMemberCompact
                             name="Rafa"
-                            role="Legal Lead & Founder"
+                            role="Legal Lead"
                             description="Abogada especialista en Derecho Inmobiliario con experiencia en litigios de alto perfil."
                         />
                         <TeamMemberCompact
                             name="Javier"
-                            role="CTO & Founder"
+                            role="CTO"
                             image={javierImg}
                             description="Arquitecto de software e ingeniero de IA. Fusiona la lógica legal con la potencia de los modelos de lenguaje."
                         />

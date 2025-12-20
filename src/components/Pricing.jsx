@@ -8,13 +8,13 @@ const PricingCard = ({ title, price, originalPrice, features, isPopular, buttonT
         bg={isPopular ? "whiteAlpha.100" : "whiteAlpha.50"}
         backdropFilter="blur(20px)"
         border="2px solid"
-        borderColor={isPopular ? "gold.400" : "whiteAlpha.200"}
+        borderColor={isPopular ? "brick.400" : "whiteAlpha.200"}
         borderRadius="3xl"
         p={10}
         position="relative"
         boxShadow={isPopular ? "0 25px 50px -12px rgba(245, 158, 11, 0.3)" : "0 25px 50px -12px rgba(0, 0, 0, 0.3)"}
         transition="all 0.4s"
-        _hover={{ transform: 'translateY(-8px)', borderColor: 'gold.400' }}
+        _hover={{ transform: 'translateY(-8px)', borderColor: 'brick.400' }}
         transform={isPopular ? 'scale(1.05)' : 'scale(1)'}
     >
         {isPopular && (
@@ -23,7 +23,7 @@ const PricingCard = ({ title, price, originalPrice, features, isPopular, buttonT
                 top="-4"
                 left="50%"
                 transform="translateX(-50%)"
-                bg="gold.500"
+                bg="brick.500"
                 color="brand.950"
                 px={6}
                 py={2}
@@ -69,7 +69,7 @@ const PricingCard = ({ title, price, originalPrice, features, isPopular, buttonT
         <List spacing={4} mb={10} textAlign="left">
             {features.map((item, i) => (
                 <ListItem key={i} color="gray.300" display="flex" alignItems="flex-start">
-                    <ListIcon as={FaCheckCircle} color="gold.400" mt={1} mr={3} w={4} h={4} />
+                    <ListIcon as={FaCheckCircle} color="brick.400" mt={1} mr={3} w={4} h={4} />
                     <Text fontSize="sm" lineHeight="relaxed">{item}</Text>
                 </ListItem>
             ))}
@@ -79,9 +79,9 @@ const PricingCard = ({ title, price, originalPrice, features, isPopular, buttonT
             w="full"
             size="lg"
             h={14}
-            bg={isPopular ? "gold.500" : "whiteAlpha.200"}
+            bg={isPopular ? "brick.500" : "whiteAlpha.200"}
             _hover={{
-                bg: isPopular ? 'gold.400' : 'whiteAlpha.300',
+                bg: isPopular ? 'brick.400' : 'whiteAlpha.300',
                 transform: 'translateY(-2px)'
             }}
             color={isPopular ? "brand.950" : "white"}
@@ -114,7 +114,7 @@ const Pricing = () => {
             />
 
             <Container maxW="container.xl" position="relative" zIndex="1" textAlign="center">
-                <Text color="gold.400" fontWeight="bold" mb={2} letterSpacing="wide" textTransform="uppercase" fontSize="sm">
+                <Text color="brick.400" fontWeight="bold" mb={2} letterSpacing="wide" textTransform="uppercase" fontSize="sm">
                     Inversión
                 </Text>
                 <Heading as="h2" size="3xl" mb={6} color="white" letterSpacing="tight">

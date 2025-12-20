@@ -74,9 +74,9 @@ const WhyNow = () => {
                             border="1px solid"
                             borderColor="gray.100"
                             transition="all 0.3s"
-                            _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'gold.400' }}
+                            _hover={{ transform: 'translateY(-5px)', shadow: 'xl', borderColor: 'brick.400' }}
                         >
-                            <Icon as={FaBalanceScale} w={8} h={8} color="gold.500" mb={4} />
+                            <Icon as={FaBalanceScale} w={8} h={8} color="brick.500" mb={4} />
                             <Heading size="lg" mb={2} color="brand.950">Sobreprecio</Heading>
                             <Text color="gray.600">
                                 Pagar el 1% del valor de la propiedad es un modelo obsoleto. El trabajo legal es el mismo, valga lo que valga la casa.
@@ -89,7 +89,7 @@ const WhyNow = () => {
                         <Box p={{ base: 8, md: 16 }} color="white">
                             <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center" mb={12}>
                                 <Box>
-                                    <Text color="gold.400" fontWeight="bold" letterSpacing="wide" mb={2}>LA NUEVA ERA</Text>
+                                    <Text color="brick.400" fontWeight="bold" letterSpacing="wide" mb={2}>LA NUEVA ERA</Text>
                                     <Heading size="xl">Parley vs Tradicional</Heading>
                                 </Box>
                                 <Icon as={FaRobot} w={12} h={12} color="whiteAlpha.400" display={{ base: 'none', md: 'block' }} />
@@ -115,7 +115,7 @@ const WhyNow = () => {
                         </Box>
 
                         {/* Visual Flair */}
-                        <Box position="absolute" top="0" right="0" w="300px" h="300px" bg="gold.500" filter="blur(150px)" opacity="0.1" />
+                        <Box position="absolute" top="0" right="0" w="300px" h="300px" bg="brick.500" filter="blur(150px)" opacity="0.1" />
                     </Box>
 
                 </VStack>

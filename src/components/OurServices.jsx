@@ -5,23 +5,23 @@ import { FaFileContract, FaShieldAlt, FaHandHoldingUsd, FaUserShield } from 'rea
 import { HiArrowRight } from 'react-icons/hi2';
 import ContactModal from './ContactModal';
 
-const ServiceItem = ({ icon, title, description, link, isAvailable, showContact, onContact }) => (
+const ServiceItem = ({ icon, title, description, link, isAvailable, showContact, onContact, accentColor = "gold" }) => (
     <VStack
         align="start"
         spacing={4}
         py={8}
         borderTop="2px solid"
-        borderColor={isAvailable || showContact ? "gold.400" : "gray.200"}
+        borderColor={isAvailable || showContact ? `${accentColor}.400` : "gray.200"}
         transition="all 0.3s"
         _hover={{
-            borderColor: isAvailable || showContact ? 'gold.500' : 'gray.300',
+            borderColor: isAvailable || showContact ? `${accentColor}.500` : 'gray.300',
         }}
     >
         <Icon
             as={icon}
             w={8}
             h={8}
-            color={isAvailable || showContact ? "gold.500" : "gray.300"}
+            color={isAvailable || showContact ? `${accentColor}.500` : "gray.300"}
         />
 
         <Heading
@@ -52,13 +52,13 @@ const ServiceItem = ({ icon, title, description, link, isAvailable, showContact,
             <Link
                 as={RouterLink}
                 to={link}
-                color="gold.600"
+                color={`${accentColor}.600`}
                 fontWeight="bold"
                 fontSize="sm"
                 display="flex"
                 alignItems="center"
                 gap={2}
-                _hover={{ color: 'gold.500', gap: 3 }}
+                _hover={{ color: `${accentColor}.500`, gap: 3 }}
                 transition="all 0.2s"
                 mt="auto"
             >
@@ -70,13 +70,13 @@ const ServiceItem = ({ icon, title, description, link, isAvailable, showContact,
             <Link
                 as="button"
                 onClick={onContact}
-                color="gold.600"
+                color={`${accentColor}.600`}
                 fontWeight="bold"
                 fontSize="sm"
                 display="flex"
                 alignItems="center"
                 gap={2}
-                _hover={{ color: 'gold.500', gap: 3 }}
+                _hover={{ color: `${accentColor}.500`, gap: 3 }}
                 transition="all 0.2s"
                 mt="auto"
             >
@@ -127,6 +127,7 @@ const OurServices = () => {
                         description="Análisis con IA y abogados expertos para asegurar tu compra inmobiliaria."
                         link="/estudio-titulos"
                         isAvailable={true}
+                        accentColor="brick"
                     />
                     <ServiceItem
                         icon={FaShieldAlt}
