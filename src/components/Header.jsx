@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Flex, Button, Text, Link, HStack } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
@@ -51,7 +52,7 @@ const Header = () => {
                     <HStack spacing={2} cursor="pointer" mr={isScrolled ? 8 : 0}>
                         <Box w={3} h={3} bg="gold.400" borderRadius="full" boxShadow="0 0 10px gold" />
                         <Text fontSize="xl" fontWeight="900" letterSpacing="-0.02em" color={isScrolled ? "white" : "white"}>
-                            Legal<Text as="span" color="gold.400">Tech</Text>
+                            Parley
                         </Text>
                     </HStack>
 
@@ -66,17 +67,34 @@ const Header = () => {
                         backdropFilter={isScrolled ? "none" : "blur(10px)"}
                         border={isScrolled ? "none" : "1px solid rgba(255,255,255,0.1)"}
                     >
-                        {['Seguridad', 'Proceso', 'Nosotros'].map((item) => (
+                        {/* Inicio Link */}
+                        <Link
+                            as={RouterLink}
+                            to="/"
+                            fontWeight="500"
+                            fontSize="sm"
+                            color="whiteAlpha.900"
+                            _hover={{ color: 'gold.400' }}
+                            transition="color 0.2s"
+                        >
+                            Inicio
+                        </Link>
+
+                        {[
+                            { name: 'Servicios', href: '#services' },
+                            { name: 'Nosotros', href: '#methodology' },
+                            { name: 'Equipo', href: '#team' },
+                        ].map((item) => (
                             <Link
-                                key={item}
-                                href={`#${item.toLowerCase()}`}
+                                key={item.name}
+                                href={item.href}
                                 fontWeight="500"
                                 fontSize="sm"
                                 color="whiteAlpha.900"
                                 _hover={{ color: 'gold.400' }}
                                 transition="color 0.2s"
                             >
-                                {item}
+                                {item.name}
                             </Link>
                         ))}
                     </HStack>

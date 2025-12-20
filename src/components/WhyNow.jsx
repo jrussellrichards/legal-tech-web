@@ -90,7 +90,7 @@ const WhyNow = () => {
                             <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="center" mb={12}>
                                 <Box>
                                     <Text color="gold.400" fontWeight="bold" letterSpacing="wide" mb={2}>LA NUEVA ERA</Text>
-                                    <Heading size="xl">LegalTech vs Tradicional</Heading>
+                                    <Heading size="xl">Parley vs Tradicional</Heading>
                                 </Box>
                                 <Icon as={FaRobot} w={12} h={12} color="whiteAlpha.400" display={{ base: 'none', md: 'block' }} />
                             </Flex>

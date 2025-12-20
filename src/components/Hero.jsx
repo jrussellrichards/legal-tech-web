@@ -1,14 +1,17 @@
 import React from 'react';
-import { Box, Container, Heading, Text, Button, Badge, Flex, SimpleGrid, Icon, Stat, StatLabel, StatNumber } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, Button, Badge, Flex, SimpleGrid, Icon, Stat, StatLabel, StatNumber, useDisclosure } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FaShieldHalved, FaFileContract, FaRobot } from 'react-icons/fa6';
 import { HiArrowRight, HiSparkles } from 'react-icons/hi2';
+import ContactModal from './ContactModal';
 
 const MotionBox = motion(Box);
 const MotionHeading = motion(Heading);
 const MotionText = motion(Text);
 
 const Hero = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
         <Box position="relative" bg="brand.950" overflow="hidden">
             {/* Background with Overlay */}
@@ -65,41 +68,41 @@ const Hero = () => {
                                 boxShadow="0 4px 20px rgba(0,0,0,0.2)"
                             >
                                 <Icon as={HiSparkles} />
-                                Tecnología Legal 2025
+                                Parley 2025
                             </Badge>
                         </Flex>
 
                         <MotionHeading
                             as="h1"
-                            fontSize={{ base: "3xl", md: "5xl", lg: "6xl" }}
+                            fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
                             fontWeight="900"
-                            lineHeight="1.05"
-                            letterSpacing="-0.03em"
+                            lineHeight="1.0"
+                            letterSpacing="-0.04em"
                             color="white"
-                            mb={6}
-                            maxW="4xl"
+                            mb={8}
+                            maxW="5xl"
                             mx="auto"
                         >
-                            ¿Confiarías tu mayor inversión a <br />
-                            <Text as="span" color="gray.400" fontWeight="400" fontSize="0.7em">
-                                métodos de hace 50 años?
+                            Tu propiedad merece <br />
+                            <Text as="span" bgGradient="linear(to-r, gold.300, gold.500)" bgClip="text">
+                                precisión del siglo XXI.
                             </Text>
                         </MotionHeading>
 
                         <MotionText
-                            fontSize={{ base: "xl", md: "2xl" }}
-                            color="gray.200"
-                            maxW="3xl"
+                            fontSize={{ base: "lg", md: "xl" }}
+                            color="gray.300"
+                            maxW="2xl"
                             mx="auto"
-                            mb={3}
-                            lineHeight="1.5"
-                            fontWeight="500"
+                            mb={4}
+                            lineHeight="1.6"
+                            fontWeight="400"
                         >
-                            Tu Estudio de Títulos + Compraventa con <Text as="span" bgGradient="linear(to-r, gold.300, gold.500)" bgClip="text" fontWeight="800">Precisión de IA</Text> y Firma Legal Experta.
+                            Estudio de Títulos con doble validación: <Text as="span" color="white" fontWeight="600">IA de última generación + Abogados expertos.</Text>
                         </MotionText>
 
-                        <Text fontSize="md" color="gold.400" fontWeight="bold" mb={12}>
-                            Cero riesgos ocultos. Precio Fijo $500.000.
+                        <Text fontSize="lg" color="gold.400" fontWeight="bold" mb={12}>
+                            Protege tu inversión más importante.
                         </Text>
 
                         <Flex
@@ -110,8 +113,7 @@ const Hero = () => {
                             mb={20}
                         >
                             <Button
-                                as="a"
-                                href="#pricing"
+                                onClick={onOpen}
                                 size="lg"
                                 h="16"
                                 px={10}
@@ -128,6 +130,9 @@ const Hero = () => {
                             </Button>
                         </Flex>
 
+                        {/* Contact Modal */}
+                        <ContactModal isOpen={isOpen} onClose={onClose} />
+
                         {/* Stats Section with Clarified Time */}
                         <SimpleGrid
                             columns={{ base: 1, md: 3 }}
@@ -138,7 +143,7 @@ const Hero = () => {
                             {[
                                 { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Doble filtro: IA + Senior" },
                                 { icon: FaFileContract, stat: "Sin Esperas", label: "Gestión Inmediata", sub: "Iniciamos apenas nos contactas" },
-                                { icon: FaShieldHalved, stat: "$500k", label: "Precio Fijo", sub: "Sin % del valor propiedad" }
+                                { icon: FaShieldHalved, stat: "Garantía", label: "Protección Total", sub: "Tu inversión 100% blindada" }
                             ].map((item, i) => (
                                 <Flex
                                     key={i}

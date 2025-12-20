@@ -69,26 +69,31 @@ const Services = () => {
                 </Box>
 
                 {/* Horizontal Timeline */}
-                <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 12, md: 0 }} position="relative">
+                <SimpleGrid columns={{ base: 1, md: 5 }} spacing={{ base: 12, md: 0 }} position="relative">
                     <HorizontalStep
                         number="1"
                         title="Reserva & Antecedentes"
-                        description="Aseguramos la propiedad y recopilamos documentos clave."
+                        description="Aseguramos la propiedad y recopilamos los documentos clave."
                     />
                     <HorizontalStep
                         number="2"
+                        title="Promesa de Compraventa"
+                        description="Redactamos y estructuramos la promesa para blindar tu operación."
+                    />
+                    <HorizontalStep
+                        number="3"
                         title="Estudio de Títulos"
                         description="Doble validación (IA + Abogado) para seguridad total."
                     />
                     <HorizontalStep
-                        number="3"
+                        number="4"
                         title="Escritura & Firma"
                         description="Redacción del contrato final y coordinación notarial."
                     />
                     <HorizontalStep
-                        number="4"
+                        number="5"
                         title="Inscripción & Entrega"
-                        description="Seguimiento en CBR hasta que la casa es tuya."
+                        description="Seguimiento en CBR hasta que la propiedad es tuya."
                         isLast
                     />
                 </SimpleGrid>

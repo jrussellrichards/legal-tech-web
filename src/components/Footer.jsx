@@ -9,13 +9,13 @@ const Footer = () => {
                 <Flex direction={{ base: 'column', md: 'row' }} justify="space-between" align="start" gap={12} mb={12}>
                     <Box maxW="sm">
                         <Text fontSize="3xl" fontWeight="900" color="white" mb={4} letterSpacing="tight">
-                            Legal<Text as="span" color="gold.400">Tech</Text>
+                            Parley
                         </Text>
                         <Text color="gray.400" lineHeight="relaxed" mb={6}>
                             Revolucionando el mercado legal inmobiliario con tecnología de punta y el respaldo de abogados expertos.
                         </Text>
                         <Text color="gray.500" fontSize="sm">
-                            © {new Date().getFullYear()} Legal Tech SpA. <br />
+                            © {new Date().getFullYear()} Parley SpA. <br />
                             Todos los derechos reservados.
                         </Text>
                     </Box>
@@ -24,7 +24,7 @@ const Footer = () => {
                         <Heading as="h4" size="md" mb={2} color="white">Contacto</Heading>
                         <HStack color="gray.300" _hover={{ color: 'gold.400' }} transition="color 0.2s">
                             <Icon as={FaEnvelope} />
-                            <Link href="mailto:contacto@legaltech.cl">contacto@legaltech.cl</Link>
+                            <Link href="mailto:contacto@parley.cl">contacto@parley.cl</Link>
                         </HStack>
                         <HStack color="gray.300" _hover={{ color: 'gold.400' }} transition="color 0.2s">
                             <Icon as={FaPhone} />

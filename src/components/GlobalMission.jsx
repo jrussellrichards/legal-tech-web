@@ -1,22 +1,22 @@
 import React from 'react';
-import { Box, Container, Heading, Text, VStack, SimpleGrid, Image as ChakraImage } from '@chakra-ui/react';
+import { Box, Container, Heading, Text, VStack, SimpleGrid, Image as ChakraImage, Icon, Flex } from '@chakra-ui/react';
+import { FaRobot, FaUserTie } from 'react-icons/fa';
 
-const AboutUs = () => {
+const GlobalMission = () => {
     return (
-        <Box py={24} bg="white" position="relative" overflow="hidden" id="about">
+        <Box py={24} bg="white" position="relative" overflow="hidden" id="mission">
             <Container maxW="container.xl">
                 <SimpleGrid columns={{ base: 1, md: 2 }} spacing={16} alignItems="center">
 
-                    {/* Left Column: Storytelling */}
+                    {/* Left Column: Text */}
                     <VStack spacing={8} align="start">
                         <Text
                             color="gold.500"
                             fontWeight="bold"
                             fontSize="xs"
-                            letterSpacing="widest"
                             textTransform="uppercase"
                         >
-                            Nuestra Motivación
+                            Nuestra Misión
                         </Text>
 
                         <Heading
@@ -26,57 +26,52 @@ const AboutUs = () => {
                             lineHeight="1.1"
                             letterSpacing="-0.02em"
                         >
-                            "No aceptamos que comprar una casa siga siendo una pesadilla."
+                            No reemplazamos al abogado. <br />
+                            <Text as="span" color="gold.500">Lo potenciamos.</Text>
                         </Heading>
 
                         <VStack spacing={6} fontSize="lg" color="gray.600" lineHeight="1.8">
                             <Text>
-                                Nos dimos cuenta de que en Chile, el estudio de títulos seguía anclado en el pasado:
-                                rumas de papel, semanas de espera y <Text as="span" color="red.500" fontWeight="bold">errores humanos que costaban caro.</Text>
+                                No somos una empresa de software intentando automatizarlo todo. Entendemos que en el derecho, <Text as="span" fontWeight="bold" color="brand.800">el criterio humano es irremplazable.</Text>
                             </Text>
 
                             <Box
                                 w="full"
-                                bg="brand.50"
+                                bg="gray.50"
                                 p={6}
                                 borderRadius="xl"
                                 borderLeft="4px solid"
-                                borderColor="brand.950"
+                                borderColor="gold.400"
                             >
-                                <Text fontWeight="bold" color="brand.950" fontSize="lg" mb={2}>
-                                    Así que cambiamos las reglas.
-                                </Text>
-                                <Text fontSize="md" color="brand.800">
-                                    Creamos un algoritmo capaz de procesar décadas de historia registral al instante,
-                                    permitiendo a nuestros abogados enfocarse en la estrategia y seguridad de tu inversión.
+                                <Text fontStyle="italic" color="gray.700">
+                                    "Nuestra tecnología no sustituye al experto: le da superpoderes. Un abogado con IA detecta lo que otros pasan por alto y trabaja con una precisión diez veces superior."
                                 </Text>
                             </Box>
 
-                            <Text fontWeight="medium" color="brand.950">
-                                Hoy transformamos un trámite lento e incierto en un proceso <Text as="span" bg="gold.100" px={1}>ágil y transparente.</Text>
+                            <Text>
+                                Combinamos la mejor ingeniería con el talento legal más agudo. Así obtenemos resultados que un estudio tradicional, por excelente que sea, <Text as="span" fontWeight="bold" color="brand.950">físicamente no puede igualar.</Text>
                             </Text>
                         </VStack>
                     </VStack>
 
-                    {/* Right Column: Image */}
+                    {/* Right Column: Visual Representation */}
                     <Box position="relative">
-                        {/* Visual Decoration */}
                         <Box
                             position="absolute"
                             top="-20px"
                             right="-20px"
                             w="100%"
                             h="100%"
-                            bg="gold.400"
+                            bg="brand.900"
                             borderRadius="3xl"
-                            opacity="0.2"
-                            transform="rotate(6deg)"
+                            opacity="0.1"
+                            transform="rotate(3deg)"
                             zIndex={0}
                         />
 
                         <ChakraImage
-                            src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2664&auto=format&fit=crop"
-                            alt="Reunión equipo legal moderno analizando datos"
+                            src="https://images.unsplash.com/photo-1577962917302-cd874c4e31d2?q=80&w=2664&auto=format&fit=crop"
+                            alt="Abogados y clientes confianza"
                             borderRadius="3xl"
                             boxShadow="2xl"
                             position="relative"
@@ -94,4 +89,4 @@ const AboutUs = () => {
     );
 };
 
-export default AboutUs;
+export default GlobalMission;
