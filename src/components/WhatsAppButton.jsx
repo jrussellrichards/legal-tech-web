@@ -3,10 +3,19 @@ import { Button, Text } from '@chakra-ui/react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WhatsAppButton = () => {
+    const handleClick = () => {
+        if (window.gtag) {
+            window.gtag('event', 'conversion', {
+                'send_to': 'AW-17838683862/TU_LABEL_WHATSAPP', // <--- REEMPLAZA ESTO CON EL LABEL DE "CLIC WHATSAPP"
+            });
+        }
+    };
+
     return (
         <Button
             as="a"
             href="https://wa.me/56951096594"
+            onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
             position="fixed"
