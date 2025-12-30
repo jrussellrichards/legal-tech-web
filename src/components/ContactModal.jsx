@@ -30,7 +30,9 @@ const ContactModal = ({ isOpen, onClose }) => {
         // Evento de Google Ads (Formulario)
         if (window.gtag) {
             window.gtag('event', 'conversion', {
-                'send_to': 'AW-17838683862/TU_LABEL_FORMULARIO', // <--- REEMPLAZA ESTO CON EL LABEL DE "ENVÍO FORMULARIO"
+                'send_to': 'AW-17838683862/ZnCWCMC39tgbENbtkrpC',
+                'value': 1.0,
+                'currency': 'CLP'
             });
         }
 
