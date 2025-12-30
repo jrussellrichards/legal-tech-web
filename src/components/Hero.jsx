@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Container, Heading, Text, Button, Badge, Flex, SimpleGrid, Icon, Stat, StatLabel, StatNumber, useDisclosure } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { FaShieldHalved, FaFileContract, FaRobot } from 'react-icons/fa6';
+import { FaShieldHalved, FaFileContract, FaRobot, FaBullseye } from 'react-icons/fa6';
 import { HiArrowRight, HiSparkles } from 'react-icons/hi2';
 import ContactModal from './ContactModal';
 
@@ -82,10 +82,10 @@ const Hero = () => {
                             mb={8}
                             maxW="5xl"
                             mx="auto"
-                        >
-                            Tu propiedad merece <br />
+                        >Gestión integral
+                              <br />
                             <Text as="span" bgGradient="linear(to-r, brick.300, brick.500)" bgClip="text">
-                                precisión del siglo XXI.
+                                 de tu compraventa.
                             </Text>
                         </MotionHeading>
 
@@ -98,11 +98,11 @@ const Hero = () => {
                             lineHeight="1.6"
                             fontWeight="400"
                         >
-                            Estudio de Títulos con doble validación: <Text as="span" color="white" fontWeight="600">IA de última generación + Abogados expertos.</Text>
+                            Servicios abogados inmobiliarios <Text as="span" color="white" fontWeight="600"></Text>
                         </MotionText>
 
                         <Text fontSize="lg" color="brick.400" fontWeight="bold" mb={12}>
-                            Protege tu inversión más importante.
+                            Resolvemos cada trámite hasta la inscripción.
                         </Text>
 
                         <Flex
@@ -141,7 +141,7 @@ const Hero = () => {
                             mx="auto"
                         >
                             {[
-                                { icon: FaRobot, stat: "99.8%", label: "Precisión de Análisis", sub: "Doble filtro: IA + Senior" },
+                                { icon: FaBullseye, stat: "99.8%", label: "Precisión Absoluta", sub: "Doble filtro: IA + Senior" },
                                 { icon: FaFileContract, stat: "Sin Esperas", label: "Gestión Inmediata", sub: "Iniciamos apenas nos contactas" },
                                 { icon: FaShieldHalved, stat: "Garantía", label: "Protección Total", sub: "Tu inversión 100% blindada" }
                             ].map((item, i) => (
