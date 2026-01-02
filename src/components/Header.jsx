@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Container, Flex, Button, Text, Link, HStack, Image } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import logoImg from '../assets/logo.png';
 
 const Header = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -14,6 +15,13 @@ const Header = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleHomeClick = (e) => {
+        if (location.pathname === '/') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
 
     return (
         <Box
@@ -50,7 +58,14 @@ const Header = () => {
                     boxShadow={isScrolled ? "0 10px 30px -10px rgba(0,0,0,0.5)" : "none"}
                 >
                     {/* Logo Area */}
-                    <Link as={RouterLink} to="/" mr={isScrolled ? 8 : 0} display="flex" alignItems="center">
+                    <Link
+                        as={RouterLink}
+                        to="/"
+                        onClick={handleHomeClick}
+                        mr={isScrolled ? 8 : 0}
+                        display="flex"
+                        alignItems="center"
+                    >
                         <Image
                             src={logoImg}
                             alt="Parley Logo"
@@ -76,6 +91,7 @@ const Header = () => {
                         <Link
                             as={RouterLink}
                             to="/"
+                            onClick={handleHomeClick}
                             fontWeight="500"
                             fontSize="sm"
                             color="whiteAlpha.900"
