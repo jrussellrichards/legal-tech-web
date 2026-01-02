@@ -115,7 +115,7 @@ const Team = () => {
                         name="Rafa"
                         role="Legal Lead"
                         image={rafaImg}
-                        imagePosition="50% 25%"
+                        imagePosition="120% 120%"
                         linkedin="https://www.linkedin.com/in/rafaella-solari-musa-b5bb0560/"
                         description="Lidera el equipo legal. Transforma conflictos complejos en soluciones blindadas para tu total tranquilidad."
                     />
