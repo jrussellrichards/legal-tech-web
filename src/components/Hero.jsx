@@ -42,7 +42,7 @@ const Hero = () => {
             </Box>
 
             {/* Content */}
-            <Box position="relative" zIndex="1" pt={{ base: "48", md: "64" }} pb="40">
+            <Box position="relative" zIndex="1" pt={{ base: "32", md: "40" }} pb="20">
                 <Container maxW="container.xl" textAlign="center">
                     <MotionBox
                         initial={{ opacity: 0, y: 30 }}
@@ -83,9 +83,9 @@ const Hero = () => {
                             maxW="5xl"
                             mx="auto"
                         >Gestión integral
-                              <br />
+                            <br />
                             <Text as="span" bgGradient="linear(to-r, brick.300, brick.500)" bgClip="text">
-                                 de tu compraventa.
+                                de tu compraventa.
                             </Text>
                         </MotionHeading>
 
@@ -101,7 +101,7 @@ const Hero = () => {
                             Servicios abogados inmobiliarios <Text as="span" color="white" fontWeight="600"></Text>
                         </MotionText>
 
-                        <Text fontSize="lg" color="brick.400" fontWeight="bold" mb={12}>
+                        <Text fontSize="lg" color="brick.400" fontWeight="bold" mb={10}>
                             Resolvemos cada trámite hasta la inscripción.
                         </Text>
 
@@ -110,7 +110,7 @@ const Hero = () => {
                             justify="center"
                             gap={5}
                             align="center"
-                            mb={20}
+                            mb={12}
                         >
                             <Button
                                 onClick={onOpen}
@@ -141,8 +141,8 @@ const Hero = () => {
                             mx="auto"
                         >
                             {[
-                                { icon: FaBullseye, stat: "99.8%", label: "Precisión Absoluta", sub: "Doble filtro: IA + Senior" },
-                                { icon: FaFileContract, stat: "Sin Esperas", label: "Gestión Inmediata", sub: "Iniciamos apenas nos contactas" },
+                                { icon: FaBullseye, stat: "Precisión", label: "Doble Validación", sub: "Revisión IA + Abogado Senior" },
+                                { icon: FaFileContract, stat: "Velocidad", label: "Gestión Inmediata", sub: "Iniciamos apenas nos contactas" },
                                 { icon: FaShieldHalved, stat: "Garantía", label: "Protección Total", sub: "Tu inversión 100% blindada" }
                             ].map((item, i) => (
                                 <Flex

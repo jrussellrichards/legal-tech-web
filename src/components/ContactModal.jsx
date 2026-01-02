@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     Modal,
     ModalOverlay,
@@ -18,10 +18,21 @@ import {
     Icon
 } from '@chakra-ui/react';
 import { FaShieldHalved } from 'react-icons/fa6';
+import emailjs from '@emailjs/browser';
+
+// --------------------------------------------------------
+// CONFIGURACIÓN DE EMAILJS
+// Reemplaza estos valores con los que obtengas en tu panel de EmailJS
+// --------------------------------------------------------
+const SERVICE_ID = "service_56yujjd";
+const TEMPLATE_ID = "template_9u1hlyt";
+const PUBLIC_KEY = "6WoXr94hSEGwBmeAl";
+// --------------------------------------------------------
 
 const ContactModal = ({ isOpen, onClose }) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const toast = useToast();
+    const formRef = useRef();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -36,19 +47,35 @@ const ContactModal = ({ isOpen, onClose }) => {
             });
         }
 
-        // Simulate form submission
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            await emailjs.sendForm(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                formRef.current,
+                PUBLIC_KEY
+            );
 
-        toast({
-            title: '¡Solicitud enviada!',
-            description: 'Nos pondremos en contacto contigo en las próximas 24 horas.',
-            status: 'success',
-            duration: 5000,
-            isClosable: true,
-        });
+            toast({
+                title: '¡Mensaje enviado!',
+                description: 'Hemos recibido tu solicitud y te contactaremos a la brevedad.',
+                status: 'success',
+                duration: 5000,
+                isClosable: true,
+            });
 
-        setIsSubmitting(false);
-        onClose();
+            onClose();
+        } catch (error) {
+            console.error('Error al enviar email:', error);
+            toast({
+                title: 'Error al enviar',
+                description: 'Hubo un problema. Por favor intenta de nuevo o escríbenos directamente a contacto@parley.cl',
+                status: 'error',
+                duration: 5000,
+                isClosable: true,
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -75,13 +102,14 @@ const ContactModal = ({ isOpen, onClose }) => {
                 <ModalCloseButton color="white" top={4} right={4} />
 
                 <ModalBody py={8} px={8}>
-                    <form onSubmit={handleSubmit}>
+                    <form ref={formRef} onSubmit={handleSubmit}>
                         <VStack spacing={5}>
                             <FormControl isRequired>
                                 <FormLabel fontSize="sm" fontWeight="600" color="gray.700">
                                     Nombre completo
                                 </FormLabel>
                                 <Input
+                                    name="name"
                                     placeholder="Tu nombre"
                                     size="lg"
                                     borderRadius="xl"
@@ -96,6 +124,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                                     Email
                                 </FormLabel>
                                 <Input
+                                    name="email"
                                     type="email"
                                     placeholder="tu@email.com"
                                     size="lg"
@@ -111,6 +140,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                                     Teléfono
                                 </FormLabel>
                                 <Input
+                                    name="phone"
                                     type="tel"
                                     placeholder="+56 9 1234 5678"
                                     size="lg"
@@ -126,6 +156,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                                     Mensaje (opcional)
                                 </FormLabel>
                                 <Textarea
+                                    name="message"
                                     placeholder="¿Algún detalle sobre tu propiedad?"
                                     size="lg"
                                     borderRadius="xl"

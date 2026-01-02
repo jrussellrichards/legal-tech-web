@@ -6,7 +6,7 @@ import javierImg from '../assets/javier.jfif';
 import rafaImg from '../assets/rafa.jfif';
 import equipoImg from '../assets/equipo.jpg';
 
-const TeamMemberCard = ({ name, role, description, image, linkedin }) => (
+const TeamMemberCard = ({ name, role, description, image, linkedin, imagePosition = "center" }) => (
     <VStack
         bg="white"
         p={8}
@@ -40,6 +40,11 @@ const TeamMemberCard = ({ name, role, description, image, linkedin }) => (
                 src={image}
                 border="5px solid white"
                 bg="brand.900"
+                sx={{
+                    'img': {
+                        objectPosition: imagePosition
+                    }
+                }}
             />
         </Box>
 
@@ -110,6 +115,7 @@ const Team = () => {
                         name="Rafa"
                         role="Legal Lead"
                         image={rafaImg}
+                        imagePosition="50% 25%"
                         linkedin="https://www.linkedin.com/in/rafaella-solari-musa-b5bb0560/"
                         description="Lidera el equipo legal. Transforma conflictos complejos en soluciones blindadas para tu total tranquilidad."
                     />
