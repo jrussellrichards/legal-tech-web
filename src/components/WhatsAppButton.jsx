@@ -14,7 +14,7 @@ const WhatsAppButton = () => {
     return (
         <Button
             as="a"
-            href="https://wa.me/56951096594"
+            href="https://wa.me/56966888459"
             onClick={handleClick}
             target="_blank"
             rel="noopener noreferrer"
