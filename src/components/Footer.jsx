@@ -33,7 +33,7 @@ const Footer = () => {
                         </HStack>
                         <HStack color="gray.300" _hover={{ color: 'gold.400' }} transition="color 0.2s">
                             <Icon as={FaPhone} />
-                            <Link href="tel:+56951096594">+56 9 5109 6594</Link>
+                            <Link href="tel:+56966888459">+56 9 6688 8459</Link>
                         </HStack>
                         <HStack color="gray.300">
                             <Icon as={FaMapMarkerAlt} />

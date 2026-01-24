@@ -142,7 +142,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                                 <Input
                                     name="phone"
                                     type="tel"
-                                    placeholder="+56 9 1234 5678"
+                                    placeholder="+56 9 6688 8459"
                                     size="lg"
                                     borderRadius="xl"
                                     borderColor="gray.200"
